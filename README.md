@@ -4,6 +4,9 @@ Welcome to the official website of **Team Phoenix**, the Aero-Designing and Aero
 
 🔗 **Live Website**: [https://ayushv-nitj.github.io/team-phoenix-website/](https://ayushv-nitj.github.io/team-phoenix-website/)
 
+![Team Phoenix Website Preview](images/demo.png)
+
+
 ---
 
 ## 📌 Features
@@ -57,7 +60,7 @@ style.css → Custom styles
    ```bash
    git clone https://github.com/ayushv-nitj/team-phoenix-website.git
    cd team-phoenix-website
-   
+
 Install backend dependencies:
 npm install
 
