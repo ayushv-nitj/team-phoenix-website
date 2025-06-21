@@ -316,7 +316,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <button class="chat-toggle" id="chatToggle">🤖</button>
 
 
-<audio id="typingSound" src="\sounds\typing.wav" preload="auto"></audio>
+<audio id="typingSound" src="sounds/typing.wav" preload="auto"></audio>
 
 <div id="scrollProgress"></div>
 <script>window.addEventListener("scroll", () => {
@@ -325,6 +325,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const scrolled = (scrollTop / scrollHeight) * 100;
   document.getElementById("scrollProgress").style.width = scrolled + "%";
 });
+const typingSound = new Audio('sounds/typing.wav');
+
 </script>
 
 </body>

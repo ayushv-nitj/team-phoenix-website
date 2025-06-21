@@ -77,6 +77,8 @@ if (dropdownParents.length > 0) {
   const chatBody = document.getElementById("chatBody");
   const userInput = document.getElementById("userInput");
   const typingSound = document.getElementById("typingSound");
+ 
+
 
   if (chatForm && chatBody && userInput) {
     chatForm.addEventListener("submit", (e) => {
