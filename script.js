@@ -141,7 +141,7 @@ if (dropdownParents.length > 0) {
     }
 
     try {
-      const res = await fetch("http://localhost:5000/chat", {
+      const res = await fetch("https://phoenix-chatbot-api.onrender.com/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: msg })

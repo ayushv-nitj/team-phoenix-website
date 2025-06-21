@@ -5,9 +5,9 @@ require("dotenv").config();
 
 const app = express();
 
-// Allow requests from any origin (you can restrict to your domain if needed)
+// CORS: Allow your GitHub Pages domain
 app.use(cors({
-  origin: '*'
+  origin: 'https://ayushv-nitj.github.io'
 }));
 
 app.use(express.json());
@@ -19,13 +19,13 @@ app.post("/chat", async (req, res) => {
     const response = await axios.post(
       "https://openrouter.ai/api/v1/chat/completions",
       {
-        model: "openai/gpt-3.5-turbo", // You can replace with other models like mistralai/mistral-7b-instruct
+        model: "openai/gpt-3.5-turbo",
         messages: [{ role: "user", content: userMessage }],
       },
       {
         headers: {
           Authorization: `Bearer ${process.env.OPENROUTER_API_KEY}`,
-          "HTTP-Referer": "https://ayushv-nitj.github.io/team-phoenix-website/index.html",
+          "HTTP-Referer": "https://ayushv-nitj.github.io/team-phoenix-website/",
           "X-Title": "Team Phoenix Chatbot"
         },
       }
@@ -33,6 +33,7 @@ app.post("/chat", async (req, res) => {
 
     const reply = response.data.choices[0].message.content;
     res.status(200).json({ reply });
+
   } catch (error) {
     if (error.response) {
       console.error("API Error:", error.response.status, error.response.data);
