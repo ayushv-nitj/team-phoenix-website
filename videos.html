@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Videos | Team Phoenix</title>
+
+  <!--External Css-->
+
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+   <!-- External JS -->
+  <script src="script.js"></script>
+
+   <!-- Navbar, Hero, Sections, Flight Sim, Footer, Dark Toggle -->
+    <!-- Navigation Bar -->
+<nav class="navbar">
+  <div class="logo">Phoenix</div>
+
+  <!-- Hamburger Icon -->
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- Nav Links -->
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="achievements.html">Achievements</a></li>
+ <li class="dropdown-parent">
+  <a href="#">Events</a>
+  <ul class="dropdown">
+    <li><a href="recentevents.html">Recent Events</a></li>
+    <li><a href="upcomingevents.html">Upcoming Events</a></li>
+  </ul>
+</li>
+    <li class="dropdown-parent">
+  <a href="#">Gallery</a>
+  <ul class="dropdown">
+    <li><a href="gallery.html">Photos</a></li>
+    <li><a href="videos.html">Videos</a></li>
+    <li><a href="downloads.html">Downloads</a></li>
+  </ul>
+</li>
+
+
+<li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+  </ul>
+</nav>
+
+  <style>
+    body {
+      background: linear-gradient(to bottom, #e8f0ff, #ffffff);
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+    }
+
+    .video-container {
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 20px;
+      color: #002244;
+    }
+
+    .video-container h1 {
+      text-align: center;
+      font-size: 2.8rem;
+      color: #004aad;
+      margin-bottom: 2rem;
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+    }
+
+    .video-card {
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .video-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+    }
+
+    .video-card video,
+    .video-card iframe {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .video-title {
+      padding: 12px;
+      font-size: 1rem;
+      text-align: center;
+      font-weight: 500;
+      background: #f4f7ff;
+      color: #004aad;
+    }
+
+    .back-home {
+      display: inline-block;
+      margin: 40px auto 0;
+      text-decoration: none;
+      background-color: #004aad;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .back-home:hover {
+      background-color: white;
+      color: #004aad;
+      border: 2px solid #004aad;
+      transform: scale(1.05);
+    }
+
+    .center {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="video-container" data-aos="fade-up">
+    <h1>Our Video Highlights</h1>
+
+    <div class="video-grid">
+     
+
+        <!-- Video 1 (YouTube embed) -->
+      <div class="video-card" data-aos="zoom-in" data-aos-delay="100">
+         <iframe width="560" height="315" src="https://www.youtube.com/embed/PwcJQzrMa4c?si=SmpjQS-kurw0AdTK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <div class="video-title">Team Phoenix Introduction</div>
+      </div>
+
+      <!-- Video 2 (YouTube embed) -->
+      <div class="video-card" data-aos="zoom-in" data-aos-delay="100">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/kVEbkY5pujU?si=jeCDn7_fO_TzaAue" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <div class="video-title">Orientation 2k25</div>
+      </div>
+      <!-- Video 3 (YouTube embed) -->
+      <div class="video-card" data-aos="zoom-in" data-aos-delay="100">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/FX4w4ZO8Li0?si=pwZEiOjj5YYavM4-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <div class="video-title">Orientation 2k24</div>
+      </div>
+      <!-- Video 4 (YouTube embed) -->
+      <div class="video-card" data-aos="zoom-in" data-aos-delay="100">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/0WB7XoSJtVY?si=4JgfAB-7mYhUCVRv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <div class="video-title">Orientation 2k22</div>
+      </div>
+    
+ <!-- Video 5 (YouTube embed) -->
+      <div class="video-card" data-aos="zoom-in" data-aos-delay="100">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/uhHpPsChGmw?si=qQEjUvb56q49zanJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <div class="video-title">Orientation 2k21</div>
+      </div>
+
+ <!-- Video 6 (YouTube embed) -->
+      <div class="video-card" data-aos="zoom-in" data-aos-delay="100">
+       <iframe width="560" height="315" src="https://www.youtube.com/embed/UhOw4g7WNa4?si=fk88R0QWIYNCoP2f" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <div class="video-title">Orientation 2k21</div>
+      </div>
+
+
+      
+      <!-- Add more videos below as needed -->
+     <!-- Video 1 (local video) -->
+     <!--<div class="video-card" data-aos="zoom-in">
+        <video controls>
+          <source src="videos/drone_test.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div class="video-title">Drone Test Flight</div>
+      </div>--> 
+
+
+    </div>
+
+    <div class="center">
+      <a href="index.html" class="back-home">← Back to Home</a>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
+  </script>
+</body>
+</html>

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Team Phoenix | NIT JSR</title>
+
+  <!-- AOS & FontAwesome -->
+
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Navbar, Hero, Sections, Flight Sim, Footer, Dark Toggle -->
+    <!-- Navigation Bar -->
+<nav class="navbar">
+  <div class="logo">Phoenix</div>
+
+  <!-- Hamburger Icon -->
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- Nav Links -->
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#">Home</a></li>
+    <li><a href="achievements.html">Achievements</a></li>
+ <li class="dropdown-parent">
+  <a href="#">Events</a>
+  <ul class="dropdown">
+    <li><a href="recentevents.html">Recent Events</a></li>
+    <li><a href="upcomingevents.html">Upcoming Events</a></li>
+  </ul>
+</li>
+    <li class="dropdown-parent">
+  <a href="#">Gallery</a>
+  <ul class="dropdown">
+    <li><a href="gallery.html">Photos</a></li>
+    <li><a href="videos.html">Videos</a></li>
+    <li><a href="downloads.html">Downloads</a></li>
+  </ul>
+</li>
+
+
+<li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+  </ul>
+</nav>
+
+
+  <!-- Hero Section -->
+ <!-- <section class="hero" data-aos="fade-up">
+    <div class="auto-type" id="typed"><h1>Team Phoenix</h1></div>
+
+    <h2>Building Aeromodels and Aircrafts</h2>
+    <p>Showcasing the club’s achievements and connecting with sponsors</p>
+    <div class="hero-buttons">
+      <a href="#projects" class="btn primary">Our Projects</a>
+      <a href="sponsor.html" class="btn secondary">Become a Sponsor</a>
+    </div>
+  </section> -->
+
+  <section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-text" id="typed">
+      <h1>Team Phoenix
+        NIT Jamshedpur</h1>
+     <h2> Building Aeromodels and Aircrafts</h2>
+      <p>Showcasing the club’s achievements and connecting with sponsors</p>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn primary">Our Projects</a>
+        <a href="sponsor.html" class="btn secondary">Become a Sponsor</a>
+      </div>
+    </div>
+<div class="hero-image">
+  <img src="images/airplane.png" alt="Airplane" class="plane-hover" />
+</div>
+  </div>
+</section>
+
+
+
+  <section class="flight-sim">
+  <h2>Recent Events</h2>
+  <div class="sky">
+    <img src="images/plogo.png" alt="plane" class="plane" />
+  </div>
+</section>
+
+<!-- Achievements Section -->
+<section class="achievements">
+  <h2>Achievements</h2>
+  <div class="achievement-list">
+    <div class="achievement-card">
+      <h3>SAE Aero Design – US Finals</h3>
+      <p>Ranked in the top 10 globally for our innovative aircraft design.</p>
+      <div class="hover-popup">
+        In this prestigious international competition, Team Phoenix secured a top 10 global rank showcasing cutting-edge UAV design, strong technical presentation, and flight performance.
+      </div>
+    </div>
+<div class="achievement-card">
+      <h3>Inter-IIT Tech Meet</h3>
+      <p>Secured podium finish for UAV-based disaster relief solution.</p>
+      <div class="hover-popup">
+        We earned a podium finish for our disaster relief UAV prototype, focusing on rapid deployment, payload delivery, and live mapping using autonomous systems.
+      </div>
+    </div>
+<div class="achievement-card">
+      <h3>Drone Expo India</h3>
+      <p>Featured among top collegiate drone development teams.</p>
+      <div class="hover-popup">
+        Representing NIT JSR, we presented our innovations in drone technology and won accolades for our design innovation, community impact, and versatility.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Our Team Section -->
+<section class="team" data-aos="fade-up">
+
+  <h2>Our Team</h2>
+  <div class="team-grid">
+ <div class="team-member">
+      <img src="images/Krish.jpg" alt="Krish Rathore">
+      <h4>Krish Rathore</h4>
+      <p>Team Leader</p>
+    </div>
+    <div class="team-member">
+      <img src="images/Deepak.jpg" alt="Deepak Kumar">
+      <h4>Deepak Kumar</h4>
+      <p>Vice President</p>
+    </div>
+    <div class="team-member">
+      <img src="images/Tanisha.jpg" alt="Tanisha Srivastava">
+      <h4>Tanisha Srivastava</h4>
+      <p>Technical Head</p>
+    </div>
+   
+  </div>
+</section>
+
+<!-- Our Projects Section -->
+ <section id="projects"></section>
+<section class="projects" data-aos="fade-up">
+
+  <h2>Our Projects</h2>
+  <div class="project-grid">
+
+
+<div class="project-card">
+  <h3>Fixed-Wing Drone</h3>
+  <p>Designed for long-range stability and speed.</p>
+  <div class="modal-hover">
+    <h4>Details</h4>
+    <p>This drone features an airfoil wing design optimized for endurance and stability. It's used in aerial surveillance and mapping missions.</p>
+  </div>
+</div>
+
+<div class="project-card">
+  <h3>Quadcopter Prototype</h3>
+  <p>A drone built for agility and versatility.</p>
+  <div class="modal-hover">
+    <h4>Details</h4>
+    <p>Equipped with 4 brushless motors and GPS navigation, this drone is perfect for dynamic testing and aerial videography.</p>
+  </div>
+</div>
+
+
+<div class="project-card">
+  <h3>VTOL System</h3>
+  <p>A multi-purpose drone built for agility and versatility in research and racing.</p>
+  <div class="modal-hover">
+    <h4>Details</h4>
+    <p>Combines vertical lift with forward flight in multi layered fashion with improved agility — excellent for innovation challenges.</p>
+  </div>
+</div>
+
+
+  </div>
+</section>
+
+
+
+
+<!-- Sponsors Section -->
+<section class="sponsors" data-aos="fade-up">
+
+  <h2>Our Sponsors</h2>
+  <p>We’re proud to be supported by visionary organizations.</p>
+  <div class="sponsor-logos">
+    <img src="images/sponsor1.png" alt="Sponsor 1">
+    <img src="images/sponsor2.png" alt="Sponsor 2">
+    <img src="images/sponsor3.png" alt="Sponsor 3">
+  </div>
+</section>
+
+
+<!-- Footer Section -->
+<footer class="footer">
+  <div class="footer-content">
+    <p>&copy; 2025 Team Phoenix | NIT Jamshedpur</p>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/team_phoenix_nit_jamshedpur" aria-label="Instagram" target="_blank">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.facebook.com/teamphoenix.nitjamshedpur" aria-label="Facebook" target="_blank">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://www.linkedin.com/company/teamphoenix-nitjsr" aria-label="LinkedIn" target="_blank">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="https://twitter.com/TeamPhoenixNITJ" aria-label="Twitter" target="_blank">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+
+
+<!-- Dark Mode Toggle -->
+<button id="darkToggle" class="dark-toggle" aria-label="Toggle Dark Mode">
+  🌙
+</button>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.getElementById("darkToggle");
+  const body = document.body;
+
+  if (toggle && body) {
+    toggle.addEventListener("click", () => {
+      body.classList.toggle("dark-mode");
+      toggle.textContent = body.classList.contains("dark-mode") ? "☀️" : "🌙";
+    });
+  }
+
+  // Hamburger toggle (optional)
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  if (hamburger && navLinks) {
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+  }
+});
+
+</script>
+
+<script>
+  const toggle = document.getElementById("darkToggle");
+  const body = document.body;
+
+  toggle.addEventListener("click", () => {
+    body.classList.toggle("dark-mode");
+    toggle.textContent = body.classList.contains("dark-mode") ? "☀️" : "🌙";
+  });
+</script>
+
+<!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    easing: 'ease-in-out',
+    once: true
+  });
+</script>
+
+  <!-- External JS -->
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true
+    });
+  </script>
+
+
+
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
+});
+
+
+  </script>
+
+
+<!-- Mini Chatbot -->
+<div class="chatbot" id="chatbot">
+  <div class="chat-header">Phoenix Bot 🤖</div>
+  <div class="chat-body" id="chatBody">
+    <div class="bot-message">Hi! How can I help you today?</div>
+  </div>
+  <form class="chat-input" id="chatForm">
+    <input type="text" id="userInput" placeholder="Type a message..." autocomplete="off" />
+    <button type="submit">➤</button>
+    <button onclick="localStorage.clear(); location.reload()">Clear Chat</button>
+
+  </form>
+</div>
+
+<!-- Chatbot Toggle Button -->
+<button class="chat-toggle" id="chatToggle">🤖</button>
+
+
+<audio id="typingSound" src="\sounds\typing.wav" preload="auto"></audio>
+
+<div id="scrollProgress"></div>
+<script>window.addEventListener("scroll", () => {
+  const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+  const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const scrolled = (scrollTop / scrollHeight) * 100;
+  document.getElementById("scrollProgress").style.width = scrolled + "%";
+});
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Become a Sponsor | Team Phoenix</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+<!-- Navbar, Hero, Sections, Flight Sim, Footer, Dark Toggle -->
+    <!-- Navigation Bar -->
+<nav class="navbar">
+  <div class="logo">Phoenix</div>
+
+  <!-- Hamburger Icon -->
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- Nav Links -->
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#">Home</a></li>
+    <li><a href="achievements.html">Achievements</a></li>
+ <li class="dropdown-parent">
+  <a href="#">Events</a>
+  <ul class="dropdown">
+    <li><a href="recentevents.html">Recent Events</a></li>
+    <li><a href="upcomingevents.html">Upcoming Events</a></li>
+  </ul>
+</li>
+    <li class="dropdown-parent">
+  <a href="#">Gallery</a>
+  <ul class="dropdown">
+    <li><a href="gallery.html">Photos</a></li>
+    <li><a href="videos.html">Videos</a></li>
+    <li><a href="downloads.html">Downloads</a></li>
+  </ul>
+</li>
+
+
+<li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+  </ul>
+</nav>
+
+
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #e8f0ff, #ffffff);
+      color: #002244;
+      margin: 0;
+    }
+
+    .sponsor-container {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 40px 20px;
+    }
+
+    .sponsor-container h1 {
+      text-align: center;
+      font-size: 2.8rem;
+      color: #004aad;
+      margin-bottom: 1rem;
+    }
+
+    .sponsor-container p {
+      font-size: 1.1rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .sponsor-highlights, .sponsor-tiers, .sponsor-form, .sponsor-testimonials {
+      margin-bottom: 50px;
+    }
+
+    .highlights {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .highlight {
+      background-color: #ffffff;
+      border-left: 6px solid #004aad;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      width: 280px;
+      transition: transform 0.3s ease;
+    }
+
+    .highlight:hover {
+      transform: translateY(-5px);
+    }
+
+    .highlight i {
+      font-size: 1.5rem;
+      color: #004aad;
+      margin-bottom: 10px;
+    }
+
+    .tiers {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .tier {
+      background: linear-gradient(135deg, #ffffff, #f0f4fa);
+      border-radius: 12px;
+      padding: 20px;
+      width: 300px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .tier:hover {
+      transform: scale(1.05);
+    }
+
+    .tier h3 {
+      color: #004aad;
+      margin-bottom: 10px;
+    }
+
+    .tier ul {
+      padding-left: 20px;
+    }
+
+    .testimonial-boxes {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .testimonial {
+      background-color: #ffffff;
+      border-left: 6px solid #004aad;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      width: 300px;
+      font-style: italic;
+      transition: transform 0.3s ease;
+    }
+
+    .testimonial:hover {
+      transform: scale(1.03);
+    }
+
+    .testimonial strong {
+      display: block;
+      margin-top: 10px;
+      font-style: normal;
+      color: #004aad;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      margin-bottom: 1rem;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    form button {
+      background-color: #004aad;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    form button:hover {
+      background-color: white;
+      color: #004aad;
+      border: 2px solid #004aad;
+    }
+
+    .back-home {
+      display: block;
+      margin: 30px auto 0;
+      width: max-content;
+      padding: 10px 20px;
+      background-color: #004aad;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .back-home:hover {
+      background-color: white;
+      color: #004aad;
+      border: 2px solid #004aad;
+    }
+  </style>
+</head>
+<body>
+  <div class="sponsor-container" data-aos="fade-up">
+    <h1>Become a Sponsor</h1>
+    <p>Support Team Phoenix and partner with future aerospace leaders. Help us innovate, fly, and compete across the globe.</p>
+
+    <section class="sponsor-highlights">
+      <div class="highlights">
+        <div class="highlight" data-aos="zoom-in"><i class="fas fa-bullhorn"></i><h4>Brand Exposure</h4><p>Your logo on our aircraft, gear & presentations.</p></div>
+        <div class="highlight" data-aos="zoom-in" data-aos-delay="100"><i class="fas fa-users"></i><h4>Tech Talent Access</h4><p>Connect with brilliant, motivated engineers.</p></div>
+        <div class="highlight" data-aos="zoom-in" data-aos-delay="200"><i class="fas fa-globe"></i><h4>Global Reach</h4><p>Competing in international design competitions.</p></div>
+      </div>
+    </section>
+
+    <section class="sponsor-tiers">
+      <h2 style="text-align:center; color:#004aad">Sponsorship Tiers</h2>
+      <div class="tiers">
+        <div class="tier" data-aos="fade-up"><h3>Silver</h3><ul><li>Logo on website</li><li>Social media mention</li></ul></div>
+        <div class="tier" data-aos="fade-up" data-aos-delay="100"><h3>Gold</h3><ul><li>Silver benefits +</li><li>Logo on t-shirts</li><li>Event mentions</li></ul></div>
+        <div class="tier" data-aos="fade-up" data-aos-delay="200"><h3>Platinum</h3><ul><li>Gold benefits +</li><li>Logo on UAVs</li><li>Prominent branding</li></ul></div>
+      </div>
+    </section>
+
+    <section class="sponsor-testimonials">
+      <h2 style="text-align:center; color:#004aad">What Our Sponsors Say</h2>
+      <div class="testimonial-boxes">
+        <div class="testimonial" data-aos="fade-right">
+          "Supporting Team Phoenix has been a rewarding partnership. Their professionalism and talent are unmatched."
+          <strong>— AeroTech Ltd.</strong>
+        </div>
+        <div class="testimonial" data-aos="fade-left" data-aos-delay="100">
+          "A truly impressive team driving innovation in UAV design. Proud to be a Platinum Sponsor."
+          <strong>— SkyVision Drones</strong>
+        </div>
+        <div class="testimonial" data-aos="fade-right" data-aos-delay="200">
+          "It’s great seeing our brand take flight with such ambitious and capable students."
+          <strong>— DroneCraft Inc.</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="sponsor-form">
+      <h2 style="text-align:center; color:#004aad">Interested in Sponsoring?</h2>
+      <form id="sponsor-form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" rows="5" placeholder="Your Message / Sponsorship Interest" required></textarea>
+        <button type="submit">Send Inquiry</button>
+      </form>
+    </section>
+
+    <div style="text-align:center; margin-top:20px;">
+      <p>Want to learn more? <a href="downloads.html" style="color:#004aad; text-decoration:underline;">Download our brochure</a>.</p>
+    </div>
+
+    <a href="index.html" class="back-home">← Back to Home</a>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
+  <script>
+    AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
+    emailjs.init("YOUR_PUBLIC_KEY");
+    document.getElementById("sponsor-form").addEventListener("submit", (e) => {
+      e.preventDefault();
+      emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", this)
+        .then(() => {
+          alert("Your sponsorship inquiry was sent successfully!");
+          this.reset();
+        }, (error) => {
+          alert("Failed to send message. Please try again later.");
+          console.error(error);
+        });
+    });
+  </script>
+</body>
+</html>

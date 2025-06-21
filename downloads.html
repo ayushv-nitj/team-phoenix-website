@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Downloads | Team Phoenix</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #e8f0ff, #ffffff);
+      color: #002244;
+      margin: 0;
+    }
+
+    .downloads-container {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 40px 20px;
+    }
+
+    .downloads-container h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #004aad;
+      margin-bottom: 2rem;
+    }
+
+    .download-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .download-item {
+      background: #ffffff;
+      border-left: 6px solid #004aad;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .download-item h3 {
+      margin: 0 0 6px;
+      font-size: 1.2rem;
+      color: #004aad;
+    }
+
+    .download-item p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: #444;
+    }
+
+    .download-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .download-actions a {
+      text-decoration: none;
+      background-color: #004aad;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .download-actions a:hover {
+      background-color: white;
+      color: #004aad;
+      border: 1px solid #004aad;
+    }
+
+    .back-home {
+      display: block;
+      width: max-content;
+      margin: 40px auto 0;
+      text-align: center;
+      text-decoration: none;
+      background-color: #004aad;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .back-home:hover {
+      background-color: white;
+      color: #004aad;
+      border: 2px solid #004aad;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <div class="downloads-container" data-aos="fade-up">
+    <h1>Downloads</h1>
+
+    <div class="download-list">
+      <div class="download-item">
+        <div>
+          <h3><i class="fas fa-file-pdf"></i> Brochure PDF</h3>
+          <p>Download our team overview brochure in PDF format.</p>
+          <div class="download-actions">
+            <a href="files/team_phoenix_brochure.pdf" target="_blank"><i class="fas fa-eye"></i> Preview</a>
+            <a href="files/team_phoenix_brochure.pdf" download><i class="fas fa-download"></i> Download</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="download-item">
+        <div>
+          <h3><i class="fas fa-file-powerpoint"></i> SAE Project Presentation</h3>
+          <p>Detailed PPT of our SAE Aero Design project.</p>
+          <div class="download-actions">
+            <a href="https://view.officeapps.live.com/op/view.aspx?src=http://127.0.0.1:5500/index.html/files/sae_project.pptx" target="_blank"><i class="fas fa-eye"></i> Preview</a>
+            <a href="files/sae_project.pptx" download><i class="fas fa-download"></i> Download</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="download-item">
+        <div>
+          <h3><i class="fas fa-file-powerpoint"></i> Mining Drone Pitch Deck</h3>
+          <p>Presentation covering our drone applications in mining.</p>
+          <div class="download-actions">
+            <a href="https://view.officeapps.live.com/op/view.aspx?src=YOUR_DOMAIN/files/mining_drone_pitch.pptx" target="_blank"><i class="fas fa-eye"></i> Preview</a>
+            <a href="files/mining_drone_pitch.pptx" download><i class="fas fa-download"></i> Download</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a href="index.html" class="back-home">← Back to Home</a>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
+  </script>
+</body>
+</html>

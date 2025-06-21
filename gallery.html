@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gallery | Team Phoenix</title>
+
+  <!-- Styles & AOS -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/embla-carousel/embla.min.css">
+
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+   <!-- External JS -->
+  <script src="script.js"></script>
+
+   <!-- Navbar, Hero, Sections, Flight Sim, Footer, Dark Toggle -->
+    <!-- Navigation Bar -->
+<nav class="navbar">
+  <div class="logo">Phoenix</div>
+
+  <!-- Hamburger Icon -->
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- Nav Links -->
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="achievements.html">Achievements</a></li>
+ <li class="dropdown-parent">
+  <a href="#">Events</a>
+  <ul class="dropdown">
+    <li><a href="recentevents.html">Recent Events</a></li>
+    <li><a href="upcomingevents.html">Upcoming Events</a></li>
+  </ul>
+</li>
+    <li class="dropdown-parent">
+  <a href="#">Gallery</a>
+  <ul class="dropdown">
+    <li><a href="gallery.html">Photos</a></li>
+    <li><a href="videos.html">Videos</a></li>
+    <li><a href="downloads.html">Downloads</a></li>
+  </ul>
+</li>
+
+
+<li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+  </ul>
+</nav>
+  <style>
+    body { background: linear-gradient(to bottom, #e8f0ff, #ffffff); font-family: 'Segoe UI', sans-serif; }
+    .gallery-container {
+      max-width: 1200px; margin: 60px auto; padding: 20px;
+      color: #002244;
+    }
+    .gallery-container h1 {
+      text-align: center; font-size: 2.8rem; color: #004aad; margin-bottom: 1.5rem;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .gallery-item {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+    .gallery-item:hover {
+      transform: scale(1.03);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.15);
+    }
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 12px;
+      background: rgba(0,0,0,0.5);
+      color: white;
+      font-size: 1rem;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .gallery-item:hover .gallery-caption {
+      opacity: 1;
+    }
+    .back-home {
+      display: inline-block;
+      margin: 40px auto;
+      text-decoration: none;
+      background-color: #004aad;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+    .back-home:hover {
+      background-color: white;
+      color: #004aad;
+      border: 2px solid #004aad;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <div class="gallery-container" data-aos="fade-up">
+    <h1>Photo Gallery</h1>
+
+    <div class="gallery-grid">
+      <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+        <img src="images/g1.png" alt="Project 1">
+        <div class="gallery-caption">Fixed‑Wing Drone Prototype</div>
+      </div>
+      <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
+        <img src="images/g2.png" alt="Project 2">
+        <div class="gallery-caption">Quadcopter in Testing</div>
+      </div>
+      <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
+        <img src="images/g3.png" alt="Team Photo">
+        <div class="gallery-caption">Team Phoenix @ Expo</div>
+      </div>
+      <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+        <img src="images/g4.png" alt="Project 1">
+        <div class="gallery-caption">Fixed‑Wing Drone Prototype</div>
+      </div>
+      <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+        <img src="images/g5.png" alt="Project 1">
+        <div class="gallery-caption">Fixed‑Wing Drone Prototype</div>
+      </div>
+      <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+        <img src="images/g6.png" alt="Project 1">
+        <div class="gallery-caption">Fixed‑Wing Drone Prototype</div>
+      </div>
+      <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+        <img src="images/g7.png" alt="Project 1">
+        <div class="gallery-caption">Fixed‑Wing Drone Prototype</div>
+      </div>
+      <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+        <img src="images/g8.png" alt="Project 1">
+        <div class="gallery-caption">Fixed‑Wing Drone Prototype</div>
+      </div>
+      <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+        <img src="images/gallery1.jpg" alt="Project 1">
+        <div class="gallery-caption">Fixed‑Wing Drone Prototype</div>
+      </div>
+      
+      <!-- Add more items similarly -->
+    </div>
+
+    <a href="index.html" class="back-home">← Back to Home</a>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
+  </script>
+</body>
+</html>
