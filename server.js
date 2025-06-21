@@ -21,8 +21,9 @@ app.post("/chat", async (req, res) => {
   },
   {
     headers: {
-      Authorization: `Bearer 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`,
-      "HTTP-Referer": "http://localhost:5000", // or your site domain
+      Authorization: `Bearer ${process.env.OPENROUTER_API_KEY}`,
+
+      "HTTP-Referer": "https://ayushv-nitj.github.io/team-phoenix-website/index.html", // or your site domain
       "X-Title": "Team Phoenix Chatbot"
     },
   }
@@ -30,15 +31,20 @@ app.post("/chat", async (req, res) => {
 
 
     const reply = response.data.choices[0].message.content;
-    res.json({ reply });
+  res.status(200).json({ reply });
   } catch (error) {
-    console.error("ChatGPT error:", error.response?.data || error.message);
+if (error.response) {
+  console.error("API Error:", error.response.status, error.response.data);
+} else {
+  console.error("Request Error:", error.message);
+}
     res.status(500).json({ error: "Error from ChatGPT server" });
   }
 });
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
 
 
 
