@@ -108,6 +108,7 @@
           </span>
         </div>
       </div>
+      <a href="#" id="forgotPasswordLink" style="display:block; text-align:right; margin-bottom:10px; color:#00d1ff; font-size:0.97rem;">Forgot Password?</a>
       <button type="submit" class="btn-login">Login</button>
     </form>
     <p style="text-align:center; margin-top:10px;">
@@ -117,7 +118,7 @@
   </div>
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
-    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";
+    import { getAuth, signInWithEmailAndPassword, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";
 
     const firebaseConfig = {
       apiKey: "AIzaSyCCcW_BTxy-R5Z0SjzZ7QKBbqyrc6QqvOY",
@@ -144,6 +145,29 @@
       togglePassword.innerHTML = type === "password"
         ? '<i class="fa-solid fa-eye"></i>'
         : '<i class="fa-solid fa-eye-slash"></i>';
+    });
+
+    // Forgot Password logic
+    document.getElementById("forgotPasswordLink").addEventListener("click", async (e) => {
+      e.preventDefault();
+      const email = document.getElementById("email").value;
+      if (!email) {
+        errorMsg.textContent = "Please enter your email above to reset your password.";
+        errorMsg.style.display = "block";
+        return;
+      }
+      try {
+        await sendPasswordResetEmail(auth, email);
+        errorMsg.textContent = "Password reset email sent! Please check your inbox(also check spam folder)";
+        errorMsg.style.display = "block";
+        errorMsg.style.background = "rgba(0,200,0,0.18)";
+        errorMsg.style.color = "#fff";
+      } catch (error) {
+        errorMsg.textContent = error.message;
+        errorMsg.style.display = "block";
+        errorMsg.style.background = "rgba(255,0,0,0.2)";
+        errorMsg.style.color = "#fff0f0";
+      }
     });
 
     loginForm.addEventListener("submit", (e) => {
