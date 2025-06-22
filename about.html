@@ -190,11 +190,34 @@
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
 }
 
-
-
+.login-signup-btn {
+      margin-right: 10px;
+      background: #fff;
+      color: #004aad;
+      border: 2px solid #004aad;
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    .login-signup-btn:last-child {
+      margin-right: 0;
+    }
+    .login-signup-btn:hover {
+      background: #004aad;
+      color: #fff;
+      border: 2px solid #004aad;
+    }
   </style>
 </head>
 <body>
+
+  <div style="position: absolute; top: 85px; right: 40px; z-index: 1000;">
+    <a href="login.html" class="login-signup-btn">Login</a>
+    <a href="signup.html" class="login-signup-btn">Sign Up</a>
+  </div>
   <div class="about-container" data-aos="fade-up" data-aos-delay="100">
     <h1 class="typing-effect">About Team Phoenix</h1>
     <p>
@@ -354,7 +377,7 @@
       <img src="images/lab3.png" alt="Lab Image 3">
     </div>
 
-    <a href="index.html" class="back-home">← Back to Home</a>
+   
   </div>
 
   <!-- Footer Section -->
@@ -398,6 +421,21 @@
     const list = document.getElementById("inducteesList2022");
     list.style.display = list.style.display === "none" ? "block" : "none";
   }
+</script>
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-analytics.js";
+  const firebaseConfig = {
+    apiKey: "AIzaSyCCcW_BTxy-R5Z0SjzZ7QKBbqyrc6QqvOY",
+    authDomain: "team-phoenix-website.firebaseapp.com",
+    projectId: "team-phoenix-website",
+    storageBucket: "team-phoenix-website.appspot.com",
+    messagingSenderId: "712551258958",
+    appId: "1:712551258958:web:188ed44bfcd689c813dc1f",
+    measurementId: "G-8FLLSTM6C8"
+  };
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
 </script>
 
 

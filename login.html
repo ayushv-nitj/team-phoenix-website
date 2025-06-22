@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Team Phoenix Login</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #001f4d, #004aad);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: white;
+    }
+    .login-box {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      width: 100%;
+      max-width: 400px;
+      backdrop-filter: blur(8px);
+    }
+    .login-box h2 {
+      margin-bottom: 25px;
+      text-align: center;
+    }
+    .input-group {
+      margin-bottom: 20px;
+    }
+    .input-group label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+    .input-group input {
+      width: 100%;
+      padding: 10px 12px;
+      border: none;
+      border-radius: 6px;
+      outline: none;
+      font-size: 1rem;
+    }
+    .btn-login {
+      width: 100%;
+      padding: 12px;
+      background: #00d1ff;
+      color: #002244;
+      font-weight: bold;
+      font-size: 1rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .btn-login:hover {
+      background: #00bbff;
+    }
+    .error-msg {
+      background: rgba(255,0,0,0.2);
+      padding: 8px;
+      margin-bottom: 10px;
+      border-radius: 6px;
+      color: #fff0f0;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <h2>Login</h2>
+    <div class="error-msg" id="errorMsg"></div>
+    <form id="loginForm">
+      <div class="input-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" required />
+      </div>
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" required />
+      </div>
+      <button type="submit" class="btn-login">Login</button>
+    </form>
+    <p style="text-align:center; margin-top:10px;">
+      Don't have an account? <a href="signup.html" style="color:#00d1ff;">Sign Up</a>
+    </p>
+    <a href="about.html" style="display:block; margin:30px auto 0 auto; text-align:center; background:#004aad; color:#fff; padding:10px 24px; border-radius:8px; text-decoration:none; width:max-content;">← Back</a>
+  </div>
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyCCcW_BTxy-R5Z0SjzZ7QKBbqyrc6QqvOY",
+      authDomain: "team-phoenix-website.firebaseapp.com",
+      projectId: "team-phoenix-website",
+      storageBucket: "team-phoenix-website.appspot.com",
+      messagingSenderId: "712551258958",
+      appId: "1:712551258958:web:188ed44bfcd689c813dc1f",
+      measurementId: "G-8FLLSTM6C8"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    const loginForm = document.getElementById("loginForm");
+    const errorMsg = document.getElementById("errorMsg");
+
+    loginForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      signInWithEmailAndPassword(auth, email, password)
+        .then(() => {
+          window.location.href = "admindashboard.html"; // Redirect to admin dashboard
+        })
+        .catch((error) => {
+          errorMsg.textContent = error.message;
+          errorMsg.style.display = "block";
+        });
+    });
+  </script>
+</body>
+</html>
