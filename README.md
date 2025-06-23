@@ -32,45 +32,6 @@ Welcome to the official website of **Team Phoenix**, the Aero-Designing and Aero
 
 ---
 
-## 📁 Folder Structure
-
-/images → All media files
-/files → PDF, PPT downloads
-/sounds → Chatbot typing audio
-index.html → Homepage
-about.html → About the team
-gallery.html → Image gallery
-videos.html → Video section
-achievements.html→ Detailed achievements
-contact.html → Contact & EmailJS form
-downloads.html → Downloadable materials
-sponsor.html → Sponsor info and form
-recentevents.html → Past events
-upcomingevents.html → Upcoming events
-script.js → Frontend JavaScript
-server.js → Node.js backend for chatbot
-style.css → Custom styles
-.env → Contains API keys (not pushed)
-
----
-
-## 📦 Setup Instructions (for local development)
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/ayushv-nitj/team-phoenix-website.git
-   cd team-phoenix-website
-
-Install backend dependencies:
-npm install
-
-Create a .env file and add your OpenRouter or OpenAI API key:
-API_KEY=your_api_key_here
-
-
-Start the server:
-node server.js
-
 
 📄 License
 This project is licensed under the MIT License – feel free to use, modify, and contribute!
