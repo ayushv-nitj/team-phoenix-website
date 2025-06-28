@@ -6,7 +6,8 @@ Welcome to the official website of **Team Phoenix**, the Aero-Designing and Aero
 
 ![Team Phoenix Website Preview](images/demo.png)
 
-
+Watch a tour video on yt
+ (https://youtu.be/wQiapfEz2lc?si=nXTA3TIfRPyn_EkE)
 ---
 
 ## 📌 Features
