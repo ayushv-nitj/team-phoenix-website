@@ -124,7 +124,10 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 1rem;
-    position: relative;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: linear-gradient(135deg,#001f4d  0%, #0b4b9f 30%, #001f4d 100%);
   }
 
   .navbar .logo {
