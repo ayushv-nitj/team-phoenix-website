@@ -102,17 +102,44 @@ body {
 
 /* Mobile Navigation */
 @media (max-width: 768px) {
-  .nav-links {
-    display: flex;
+    .nav-links {
     flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+    margin-top: 1rem;
     position: absolute;
     top: 60px;
     left: 0;
-    width: 100%;
     background-color: #002244;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s ease;
+    z-index: 999;
+  }
+
+
+     .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background: linear-gradient(135deg,#001f4d  0%, #0b4b9f 30%, #001f4d 100%);
+  }
+
+   .navbar .logo {
+    order: 1;
+  }
+
+    .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    order: 2;
+    margin-left: auto;
   }
 
   .nav-links.show {
@@ -928,7 +955,7 @@ body {
 }
 
 .sponsor-logos img {
-  filter: grayscale(100%) brightness(1.2);
+  filter: grayscale(0%) brightness(1.2);
 }
 
 
