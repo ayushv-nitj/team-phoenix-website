@@ -17,7 +17,7 @@ body {
 .navbar {
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 900;
   transition: all 0.3s ease;
   display: flex;
   justify-content: space-between;
@@ -97,7 +97,7 @@ body {
   list-style: none;
   min-width: 160px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  z-index: 999;
+  z-index: 1100;
   border-radius: 6px;
 }
 
@@ -126,7 +126,7 @@ body {
     padding: 1rem;
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 900;
     background: linear-gradient(135deg,#001f4d  0%, #0b4b9f 30%, #001f4d 100%);
   }
 
@@ -151,11 +151,12 @@ body {
     right: 0;
     height: 100vh;
     width: 70vw;
-    background-color: #002244;
-    gap: 1rem;
-    padding-top: 80px;
-    padding-left: 0;
-    z-index: 1050;
+    background-color: #0158b0;
+    gap: 0.5rem;
+    padding-top: 30px;
+    padding-left: 60px;
+    padding-right: 60px;
+    z-index: 1100;
     transform: translateX(100%);
     transition: transform 0.8s cubic-bezier(0.77,0.2,0.05,1.0);
     box-shadow: -4px 0 16px rgba(0,0,0,0.15);
@@ -202,7 +203,7 @@ body {
     width: 100%;
     box-shadow: none;
     padding-left: 0;
-    z-index: 1;
+    z-index: auto;
     border-radius: 0 0 8px 8px;
     flex-direction: column;
   }
@@ -231,6 +232,24 @@ body {
   .navbar .dropdown li a:hover {
     background-color: white;
     color: #002244;
+  }
+
+
+  .nav-links {
+    z-index: 1100; /* Ensure nav-links is above the buttons */
+  }
+
+  .login-signup-btn {
+    position: sticky;
+    top: 10px;      /* Adjust to match your navbar's top padding */
+    right: 5px;    /* Adjust so buttons appear left of the hamburger */
+    z-index: 1101;  /* Above navbar */
+    left: 140px;
+    margin-left: 60px;
+    margin-right: 5px;
+   
+    border-radius: 6px;
+
   }
 }
 
@@ -426,7 +445,7 @@ body {
   list-style: none;
   min-width: 160px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  z-index: 999;
+  z-index: 1101;
   border-radius: 6px;
 }
 
