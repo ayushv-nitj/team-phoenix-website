@@ -1,6 +1,3 @@
-
-
-
 document.addEventListener("DOMContentLoaded", () => {
   // Hamburger toggle
   const hamburger = document.getElementById('hamburger');
@@ -40,6 +37,10 @@ if (dropdownParents.length > 0) {
       if (window.innerWidth <= 768) {
         e.preventDefault(); // prevent anchor jump
         const parent = link.parentElement;
+        // Close other open dropdowns
+        document.querySelectorAll('.dropdown-parent.active').forEach(item => {
+          if (item !== parent) item.classList.remove('active');
+        });
         parent.classList.toggle('active');
       }
     });
