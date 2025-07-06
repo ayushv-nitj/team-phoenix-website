@@ -35,17 +35,39 @@ if (dropdownParents.length > 0) {
   dropdownParents.forEach(link => {
     link.addEventListener('click', (e) => {
       if (window.innerWidth <= 768) {
-        e.preventDefault(); // prevent anchor jump
+        e.preventDefault();
         const parent = link.parentElement;
         // Close other open dropdowns
         document.querySelectorAll('.dropdown-parent.active').forEach(item => {
-          if (item !== parent) item.classList.remove('active');
+          if (item !== parent) {
+            item.classList.remove('active');
+            item.querySelector('a').setAttribute('aria-expanded', 'false');
+          }
         });
-        parent.classList.toggle('active');
+        const isActive = parent.classList.toggle('active');
+        link.setAttribute('aria-expanded', isActive ? 'true' : 'false');
       }
     });
   });
 }
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 768) {
+    navLinks && navLinks.classList.remove('show');
+    document.querySelectorAll('.dropdown-parent.active').forEach(item => {
+      item.classList.remove('active');
+      item.querySelector('a').setAttribute('aria-expanded', 'false');
+    });
+  }
+});
+
+document.addEventListener('click', (e) => {
+  if (window.innerWidth <= 768 && navLinks && navLinks.classList.contains('show')) {
+    if (!navLinks.contains(e.target) && e.target !== hamburger) {
+      navLinks.classList.remove('show');
+    }
+  }
+});
 
 
   
@@ -197,3 +219,4 @@ if (typeof EmblaCarousel !== 'undefined') {
     });
   }
 }
+
