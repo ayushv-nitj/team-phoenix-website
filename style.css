@@ -326,7 +326,7 @@ body {
   background-color: #fff;
   padding: 20px;
   border-radius: 10px;
-  width: 220px;
+  width: 600px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
@@ -338,23 +338,23 @@ body {
   background-color: #fff;
   padding: 20px;
   border-radius: 10px;
-  width: 220px;
+  width: 600px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   text-align: center;
   transition: transform 0.3s ease;
 }
 
 .team-member:hover {
-  transform: scale(1.05);
+  transform: scale(1.001);
 }
 
 .team-member img {
   width: 100%;
   height: auto;
-  border-radius: 50%;
+  border-radius: 0%;
   object-fit: cover;
   margin-bottom: 15px;
-  border: 3px solid #004aad;
+  border: 5px solid #004aad;
 }
 
 /* Projects Section */
@@ -419,9 +419,6 @@ body {
   line-height: 1.4;
 }
 
-/*achievements section  */
-
-/* Achievements Section */
 /* Achievements Section */
 .achievements {
   background-color: #fff;
@@ -461,6 +458,7 @@ body {
   position: relative; /* Needed for positioning popup */
   cursor: pointer;
   transition: transform 0.3s ease;
+  z-index: 900;
 }
 
 .achievement-card:hover {
@@ -487,7 +485,7 @@ body {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease, transform 0.3s ease;
-  z-index: 10;
+  z-index: 900;
 }
 
 /* Show popup on hover */
@@ -501,6 +499,12 @@ body {
 .hover-popup h4 {
   color: #004aad;
   margin-bottom: 8px;
+}
+
+.more-achievements {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
 
@@ -1122,5 +1126,4 @@ html {
   z-index: 1000;
   transition: all 0.3s ease;
 }
-
 }

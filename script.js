@@ -192,6 +192,27 @@ document.addEventListener('click', (e) => {
       }
     }
   }
+
+  // Read more button in Achievements  section of index page
+  const readMoreBtn = document.getElementById('readMoreBtn');
+  const readLessBtn = document.getElementById('readLessBtn');
+  const moreAchievements = document.querySelector('.more-achievements');
+
+  if (readMoreBtn && readLessBtn && moreAchievements) {
+    readMoreBtn.addEventListener('click', () => {
+      moreAchievements.style.display = 'flex';
+      readMoreBtn.style.display = 'none';
+      readLessBtn.style.display = 'inline-block';
+    });
+
+    readLessBtn.addEventListener('click', () => {
+      moreAchievements.style.display = 'none';
+      readMoreBtn.style.display = 'inline-block';
+      readLessBtn.style.display = 'none';
+      // Optionally scroll back to the achievements section
+      document.querySelector('.achievements').scrollIntoView({ behavior: 'smooth' });
+    });
+  }
 });
 
 // Typed.js effect (optional)
