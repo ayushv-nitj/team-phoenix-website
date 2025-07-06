@@ -93,64 +93,82 @@
   <div class="achievements-container">
     <h1 data-aos="fade-up">Our Achievements</h1>
 
-    <div class="achievement-grid">
-      <div class="achievement-card" data-aos="fade-up" onclick="openModal('modal1')">
-        <h3>SAE Aero Design – US Finals</h3>
-        <p>Ranked in the top 10 globally for our innovative aircraft design among collegiate teams worldwide.</p>
-      </div>
+  <!-- Achievements Section -->
 
-      <div class="achievement-card" data-aos="fade-up" data-aos-delay="100" onclick="openModal('modal2')">
-        <h3>Inter-IIT Tech Meet</h3>
-        <p>Secured podium finish for UAV-based disaster relief solution among premier institutes of India.</p>
-      </div>
-
-      <div class="achievement-card" data-aos="fade-up" data-aos-delay="200" onclick="openModal('modal3')">
-        <h3>Drone Expo India</h3>
-        <p>Featured as one of the top collegiate drone development teams at a national technology showcase event.</p>
-      </div>
-
-      <div class="achievement-card" data-aos="fade-up" data-aos-delay="300" onclick="openModal('modal4')">
-        <h3>Mining Drone Project</h3>
-        <p>Designed and built UAVs tailored for underground mining safety and aerial surveying applications.</p>
-      </div>
-
-      <div class="achievement-card" data-aos="fade-up" data-aos-delay="400" onclick="openModal('modal5')">
-        <h3>Innovate India Hackathon</h3>
-        <p>Developed an autonomous UAV model with integrated image processing for search and rescue operations.</p>
-      </div>
+  <div class="achievement-list">
+    <!-- First 3 cards always visible -->
+    <div class="achievement-card">
+      <h3>SAE Aero Design West 2025</h3>
+      <p>6th place globally in the Design Report </p>
+    </div>
+    <div class="achievement-card">
+      <h3>SAE Aero Design 2023</h3>
+      <p>3rd Globally in CFD Analysis (Design Report).</p>
+    </div>
+    <div class="achievement-card">
+      <h3>SAE Aero Design 2022</h3>
+      <p>3rd in CFD Analysis in Micro Class.</p>
     </div>
 
-    <a href="index.html" class="back-home">← Back to Home</a>
+    <!-- Hidden by default -->
+    <div class="more-achievements" style="display: none;">
+      <div class="achievement-card">
+      <h3>SAE Aero Design 2021</h3>
+      <p>9th Globally and 2nd in Application Report Nationally.</p>
+    </div>
+      <div class="achievement-card">
+        <h3>SAE Aero Design 2020</h3>
+        <p>7th Nationally, 1st in Best Innovation (Regular Class), 7th in Design Report, 11th Globally (Regular Class).</p>
+      </div>
+      <div class="achievement-card">
+        <h3>SAE Aero Design 2019</h3>
+        <p>9th Globally (Regular Class), 1st in Design Report Submission.</p>
+      </div>
+      <div class="achievement-card">
+        <h3>SAE Aero Design 2018</h3>
+        <p>7th Globally (Regular Class), 1st in Design Report Submission.</p>
+      </div>
+      <div class="achievement-card">
+        <h3>SAE Aero Design 2017</h3>
+        <p>15th Globally (Regular Class), 3rd among Asian Teams.</p>
+      </div>
+      <div class="achievement-card">
+        <h3>SAE Aero Design 2016</h3>
+        <p>11th Globally (Regular Class), 1st among Asian Teams.</p>
+      </div>
+      <div class="achievement-card">
+        <h3>SAE Aero Design 2015</h3>
+        <p>13th Globally (Micro Class).</p>
+      </div>
+      <div class="achievement-card">
+        <h3>SAE Aero Design 2014</h3>
+        <p>7th Globally (Micro Class), 1st among all Indian Teams.</p>
+      </div>
+      <div class="achievement-card">
+        <h3>SAE Aero Design 2013</h3>
+        <p>18th Globally (Regular Class), 1st among all Indian Teams.</p>
+      </div>
+      <div class="achievement-card">
+        <h3>SAE Aero Design 2012</h3>
+        <p>2nd Position among all Indian Teams.</p>
+      </div>
+    </div>
+  
+  <button id="readMoreBtn" class="btn primary" style="margin-top:20px; ">Read More</button>
+  <button id="readLessBtn" class="btn secondary" style="margin-top:20px; display:none;">Read Less</button>
   </div>
-
-  <!-- Modals -->
-  <div id="modal1" class="modal"><div class="modal-content"><span class="modal-close" onclick="closeModal('modal1')">&times;</span><h3>SAE Aero Design – US Finals</h3><p>In this prestigious international competition, Team Phoenix secured a top 10 global rank showcasing cutting-edge UAV design, strong technical presentation, and flight performance.</p></div></div>
-  <div id="modal2" class="modal"><div class="modal-content"><span class="modal-close" onclick="closeModal('modal2')">&times;</span><h3>Inter-IIT Tech Meet</h3><p>We earned a podium finish for our disaster relief UAV prototype, focusing on rapid deployment, payload delivery, and live mapping using autonomous systems.</p></div></div>
-  <div id="modal3" class="modal"><div class="modal-content"><span class="modal-close" onclick="closeModal('modal3')">&times;</span><h3>Drone Expo India</h3><p>Representing NIT JSR, we presented our innovations in drone technology and won accolades for our design innovation, community impact, and versatility.</p></div></div>
-  <div id="modal4" class="modal"><div class="modal-content"><span class="modal-close" onclick="closeModal('modal4')">&times;</span><h3>Mining Drone Project</h3><p>Developed a customized UAV capable of indoor and underground flight for mining safety analysis, mapping, and gas detection—tested in live mining zones.</p></div></div>
-  <div id="modal5" class="modal"><div class="modal-content"><span class="modal-close" onclick="closeModal('modal5')">&times;</span><h3>Innovate India Hackathon</h3><p>Created a UAV prototype that utilizes real-time video and image recognition to locate victims in disaster zones autonomously and share coordinates with rescue teams.</p></div></div>
-
+  </div>
 
     <!-- Footer Section -->
 <footer class="footer">
   <div class="footer-content">
     <h3>&copy; 2025 Team Phoenix | NIT Jamshedpur</h3>      
     </div>
-  </div>
 </footer>
-
 
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
     AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
-
-    function openModal(id) {
-      document.getElementById(id).style.display = "flex";
-    }
-
-    function closeModal(id) {
-      document.getElementById(id).style.display = "none";
-    }
 
     // Close on outside click
     window.addEventListener("click", function(e) {
@@ -158,6 +176,8 @@
         e.target.style.display = "none";
       }
     });
+
+
   </script>
 </body>
 </html>
