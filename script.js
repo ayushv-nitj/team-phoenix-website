@@ -166,7 +166,13 @@ document.addEventListener('click', (e) => {
     }
 
     try {
-      const res = await fetch("https://phoenix-chatbot-api.onrender.com/chat", {
+      const endpoint =
+  location.hostname === "127.0.0.1" || location.hostname === "localhost"
+    ? "http://localhost:5000/chat"
+    : "https://phoenix-chatbot-api.onrender.com/chat";
+
+const res = await fetch(endpoint, {
+
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: msg })
