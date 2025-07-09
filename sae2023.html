@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAE 2025 Experience | Team Phoenix</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9fbff;
+      color: #002244;
+    }
+    header {
+      background: linear-gradient(135deg, #001f4d, #004aad);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      color: #004aad;
+      margin-bottom: 20px;
+    }
+    .gallery {
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+    }
+    .gallery img {
+      height: 250px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    .metrics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: space-between;
+    }
+    .metric {
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 20px;
+      flex: 1 1 220px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .metric h3 {
+      font-size: 2rem;
+      color: #004aad;
+    }
+    .metric p {
+      font-size: 1rem;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+    }
+    .back-home {
+      display: inline-block;
+      margin-top: 40px;
+      text-decoration: none;
+      background-color: #004aad;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+    .back-home:hover {
+      background-color: white;
+      color: #004aad;
+      border: 2px solid #004aad;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Team Phoenix at SAE Aero Design West 2025</h1>
+    <p>Our journey from inspection to flight at Van Nuys, California</p>
+  </header>
+
+
+   <section>
+    <h2>📊 Our Key Metrics</h2>
+    <div class="metrics">
+      <div class="metric">
+        <h3>75+</h3>
+        <p>International Teams Participated</p>
+      </div>
+      <div class="metric">
+        <h3>6<sup>th</sup></h3>
+        <p>Global Rank in Design Report</p>
+      </div>
+      <div class="metric">
+        <h3>100%</h3>
+        <p>Technical Clearance Success</p>
+      </div>
+    </div>
+  </section>
+
+   <section class="gallery">
+    <img src="images/sae1.png" alt="Tech Inspection">
+    <img src="images/sae2.png" alt="Flight Round">
+    <img src="images/sae3.png" alt="Team Work">
+    <img src="images/sae4.png" alt="Award Ceremony">
+    <img src="images/sae5.png" alt="Tech Inspection">
+    <img src="images/sae6.png" alt="Flight Round">
+    <img src="images/sae7.png" alt="Team Work">
+    <img src="images/sae8.png" alt="Award Ceremony">
+    <img src="images/sae9.png" alt="Award Ceremony">
+
+  </section>
+
+  <section>
+    <h2>📋 Technical Inspection & Launch</h2>
+    <p>The SAE Aero Design West 2025 competition kicked off on April 4th in Van Nuys, California, with the all-important Technical Inspection Round.</p>
+    <p>Our team, Team Phoenix from NIT Jamshedpur, proudly presented our aircraft for a detailed evaluation. The judges thoroughly checked every component—from aerodynamic design and structural integrity to control systems and safety features.</p>
+    <p>After months of dedication and hard work, seeing our aircraft pass the inspection was a thrilling milestone. With the green light received, we were officially ready for the skies! ✈️</p>
+  </section>
+
+  <section>
+    <h2>🌍 Global Competition & Flight Rounds</h2>
+    <p>Team Phoenix from NIT Jamshedpur made a remarkable impression at SAE Aero Design West 2025, competing among some of the most talented engineering teams worldwide. After the successful completion of the Technical Inspection, our aircraft was ready for the flight rounds.</p>
+    <p>The Flight Round brought together over 75 teams from all classes across the globe, including countries like China, Brazil, and the United States. Facing real-world flight challenges and high-pressure scenarios, our team demonstrated precision, innovation, and composure.</p>
+  </section>
+
+  <section>
+    <h2>🏆 Achievement</h2>
+    <p>We are proud to share that Team Phoenix secured <strong>6th place globally in the Design Report – Regular Class</strong>, showcasing our engineering excellence and commitment to delivering high-performance design solutions on an international stage. ✨️</p>
+  </section>
+
+ 
+ 
+
+  <footer>
+    <a href="achievements.html" class="back-home">← Back</a>
+  </footer>
+
+  <script>
+    const images = document.querySelectorAll('.gallery img');
+    let i = 0;
+    setInterval(() => {
+      images.forEach(img => img.style.opacity = '1');
+      images[i % images.length].style.opacity = '1';
+      i++;
+    }, 2000);
+  </script>
+</body>
+</html>

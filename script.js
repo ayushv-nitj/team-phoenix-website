@@ -1,6 +1,3 @@
-
-
-
 document.addEventListener("DOMContentLoaded", () => {
   // Hamburger toggle
   const hamburger = document.getElementById('hamburger');
@@ -38,13 +35,39 @@ if (dropdownParents.length > 0) {
   dropdownParents.forEach(link => {
     link.addEventListener('click', (e) => {
       if (window.innerWidth <= 768) {
-        e.preventDefault(); // prevent anchor jump
+        e.preventDefault();
         const parent = link.parentElement;
-        parent.classList.toggle('active');
+        // Close other open dropdowns
+        document.querySelectorAll('.dropdown-parent.active').forEach(item => {
+          if (item !== parent) {
+            item.classList.remove('active');
+            item.querySelector('a').setAttribute('aria-expanded', 'false');
+          }
+        });
+        const isActive = parent.classList.toggle('active');
+        link.setAttribute('aria-expanded', isActive ? 'true' : 'false');
       }
     });
   });
 }
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 768) {
+    navLinks && navLinks.classList.remove('show');
+    document.querySelectorAll('.dropdown-parent.active').forEach(item => {
+      item.classList.remove('active');
+      item.querySelector('a').setAttribute('aria-expanded', 'false');
+    });
+  }
+});
+
+document.addEventListener('click', (e) => {
+  if (window.innerWidth <= 768 && navLinks && navLinks.classList.contains('show')) {
+    if (!navLinks.contains(e.target) && e.target !== hamburger) {
+      navLinks.classList.remove('show');
+    }
+  }
+});
 
 
   
@@ -169,6 +192,27 @@ if (dropdownParents.length > 0) {
       }
     }
   }
+
+  // Read more button in Achievements  section of index page
+  const readMoreBtn = document.getElementById('readMoreBtn');
+  const readLessBtn = document.getElementById('readLessBtn');
+  const moreAchievements = document.querySelector('.more-achievements');
+
+  if (readMoreBtn && readLessBtn && moreAchievements) {
+    readMoreBtn.addEventListener('click', () => {
+      moreAchievements.style.display = 'flex';
+      readMoreBtn.style.display = 'none';
+      readLessBtn.style.display = 'inline-block';
+    });
+
+    readLessBtn.addEventListener('click', () => {
+      moreAchievements.style.display = 'none';
+      readMoreBtn.style.display = 'inline-block';
+      readLessBtn.style.display = 'none';
+      // Optionally scroll back to the achievements section
+      document.querySelector('.achievements').scrollIntoView({ behavior: 'smooth' });
+    });
+  }
 });
 
 // Typed.js effect (optional)
@@ -196,3 +240,4 @@ if (typeof EmblaCarousel !== 'undefined') {
     });
   }
 }
+

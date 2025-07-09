@@ -14,23 +14,11 @@ body {
 }
 
 /* Navbar */
-
-
 .navbar {
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 900;
   transition: all 0.3s ease;
-}
-
-/* Shrink effect on scroll */
-.navbar.shrink {
-  padding: 0.6rem 2rem;
-  background-color: #001a33;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
-
-.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -39,21 +27,23 @@ body {
   color: #fff;
 }
 
+.navbar.shrink {
+  padding: 0.6rem 2rem;
+  background-color: #001a33;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
 .navbar .logo {
   font-size: 1.5rem;
   font-weight: bold;
+  display: flex;
+  align-items: center;
 }
 
 .navbar .nav-links {
   list-style: none;
   display: flex;
   gap: 1.5rem;
-}
-
-.navbar .nav-links a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
 }
 
 .navbar .nav-links a {
@@ -71,14 +61,7 @@ body {
   box-shadow: 0 10px 16px rgba(0, 0, 0, 0.2);
 }
 
-
 /* Hamburger icon (hidden by default) */
-
-.hamburger {
-  display: none; /* Hide hamburger on desktop */
-}
-
-/* Base Styles */
 .hamburger {
   display: none;
   cursor: pointer;
@@ -93,181 +76,48 @@ body {
   transition: 0.3s ease;
 }
 
-
-@media (max-width: 768px) {
-  .hamburger {
-    display: flex;
-  }
-}
-
-/* Mobile Navigation */
-@media (max-width: 768px) {
-    .nav-links {
-    flex-direction: column;
-    width: 100%;
-    gap: 1rem;
-    margin-top: 1rem;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    background-color: #002244;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease;
-    z-index: 999;
-  }
-
-
-     .navbar {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem;
-    background: linear-gradient(135deg,#001f4d  0%, #0b4b9f 30%, #001f4d 100%);
-  }
-
-   .navbar .logo {
-    order: 1;
-  }
-
-    .hamburger {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    order: 2;
-    margin-left: auto;
-  }
-
-  .nav-links.show {
-   max-height: fit-content;/* Adjust as needed based on number of links */
-  }
-
-/* Edits */
-
+/* Dropdown styling (desktop) */
 .nav-links li {
-  text-align: center;
-  padding: 12px 0;
-  font-weight: 500;
-  font-size: 1.05rem;
-  letter-spacing: 0.5px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.nav-links li:hover {
-  background-color: #004aad1a; /* light highlight */
-  transform: scale(1.05);
-  color: #004aad;
-}
-
-
-.nav-links li a {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-  width: 100%;
-}
-
-.navbar .dropdown-parent {
   position: relative;
 }
 
-.navbar .dropdown {
-  display: none;
-  flex-direction: column;
-  background-color: #001f4d;
-  padding-left: 0;
+
+.dropdown-parent {
+  position: relative;
 }
 
-.navbar .dropdown-parent:hover .dropdown,
-.navbar .dropdown-parent.active .dropdown {
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
+  background-color: #001f4d;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  min-width: 160px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1101;
+  border-radius: 6px;
+}
+
+.dropdown li a {
+  display: block;
+  padding: 10px 16px;
+  color: #002244;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.dropdown li a:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdown-parent:hover .dropdown {
   display: flex;
 }
 
-.navbar .dropdown li {
-  padding: 10px 0;
-  text-align: center;
-
-}
-
-.navbar .dropdown li a {
-  color: white;
-  padding: 6px 16px;
-}
-
-
-.navbar .dropdown li a:hover {
-  background-color: white;
- 
-  color: #002244;
-}
-
-
-/* Edits */
-
-
-  .hamburger {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-  }
-
-  .hamburger span {
-    width: 25px;
-    height: 3px;
-    background-color: white;
-    border-radius: 2px;
-  }
-}
-
-
-
-
-
-
-.hero {
-  background: linear-gradient(135deg, #001f4d 0%, #004aad 50%, #00bfff 100%);
-}
-
-/* Hero Section */
-/*
-.hero {
-  text-align: center;
-  padding: 100px 20px;
-
-}
-
-.hero h1 {
-  font-size: 2.8rem;
-  color: #fdfdfd;
-  margin-bottom: 1rem;
-}
-.hero h2 {
-  font-size: 1.6rem;
-  color: #fdfdfd;
-  margin-bottom: 1rem;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-   color: #fdfdfd;
-}
-
-.hero-buttons .btn {
-  padding: 0.8rem 1.6rem;
-  margin: 0 0.5rem;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-} 
-*/
 
 .hero {
   background: linear-gradient(to right, #002244, #0059b3);
@@ -406,46 +256,7 @@ body {
 
 
   /* Dropdown styling */
-.nav-links li {
-  position: relative;
-}
 
-.dropdown-parent {
-  position: relative;
-}
-
-.dropdown {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  display: none;
-  background-color: #001f4d ;
-;
-  flex-direction: column;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  min-width: 160px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  z-index: 999;
-  border-radius: 6px;
-}
-
-.dropdown li a {
-  display: block;
-  padding: 10px 16px;
-  color: #002244;
-  text-decoration: none;
-  transition: background 0.3s ease;
-}
-
-.dropdown li a:hover {
-  background-color: #f0f0f0;
-}
-
-.dropdown-parent:hover .dropdown {
-  display: flex;
-}
 
 
 
@@ -515,7 +326,7 @@ body {
   background-color: #fff;
   padding: 20px;
   border-radius: 10px;
-  width: 220px;
+  width: 600px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
@@ -527,23 +338,23 @@ body {
   background-color: #fff;
   padding: 20px;
   border-radius: 10px;
-  width: 220px;
+  width: 600px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   text-align: center;
   transition: transform 0.3s ease;
 }
 
 .team-member:hover {
-  transform: scale(1.05);
+  transform: scale(1.001);
 }
 
 .team-member img {
   width: 100%;
   height: auto;
-  border-radius: 50%;
+  border-radius: 0%;
   object-fit: cover;
   margin-bottom: 15px;
-  border: 3px solid #004aad;
+  border: 5px solid #004aad;
 }
 
 /* Projects Section */
@@ -608,9 +419,6 @@ body {
   line-height: 1.4;
 }
 
-/*achievements section  */
-
-/* Achievements Section */
 /* Achievements Section */
 .achievements {
   background-color: #fff;
@@ -650,6 +458,7 @@ body {
   position: relative; /* Needed for positioning popup */
   cursor: pointer;
   transition: transform 0.3s ease;
+  z-index: 900;
 }
 
 .achievement-card:hover {
@@ -676,7 +485,7 @@ body {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease, transform 0.3s ease;
-  z-index: 10;
+  z-index: 900;
 }
 
 /* Show popup on hover */
@@ -690,6 +499,12 @@ body {
 .hover-popup h4 {
   color: #004aad;
   margin-bottom: 8px;
+}
+
+.more-achievements {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
 
@@ -828,98 +643,6 @@ body.dark-mode .social-icons a:hover {
 }
 
 
-/* 🌐 Responsive Design - Mobile First Approach */
-@media (max-width: 768px) {
-  /* Navbar */
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1rem;
-  }
-
-  .navbar .nav-links {
-    flex-direction: column;
-    width: 100%;
-    gap: 1rem;
-    margin-top: 1rem;
-  }
-
-  .navbar .nav-links a {
-    width: 100%;
-    padding: 10px;
-    background-color: #003366;
-    border-radius: 8px;
-  }
-
-  /* Hero Section */
-  .hero {
-    padding: 60px 20px;
-  }
-
-  .hero h1 {
-    font-size: 2rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
-
-  .hero-buttons .btn {
-    display: block;
-    width: 100%;
-    margin: 10px 0;
-  }
-
-  /* Sections: Projects, Achievements, Team */
-  .project-grid,
-  .achievement-list,
-  .team-grid,
-  .sponsor-logos {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .project-card,
-  .achievement-card,
-  .team-member {
-    width: 90%;
-  }
-
-  /* Sponsors Section */
-  .sponsor-logos img {
-    width: 150px;
-  }
-
-  /* Footer */
-  .social-icons a {
-    font-size: 1.2rem;
-  }
-
-  /* Dark Toggle Button (bottom-right stays intact) */
-
-  /* Dark Mode Styles */
-.dark-mode {
-  background-color: #1c1c1c;
-  color: #f5f5f5;
-}
-
-.dark-toggle {
-  position: fixed;
-  bottom: 15px;
-  left: 15px;
-  padding: 10px 12px;
-  background-color: #004aad;
-  color: white;
-  border: none;
-  font-size: 1.2rem;
-  border-radius: 50%;
-  cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  z-index: 1000;
-  transition: all 0.3s ease;
-}
-
-}
 
 
 body {
@@ -994,7 +717,7 @@ html {
     }
 
     .achievements-container h1 {
-      font-size: 2.8rem;
+      font-size: 2.6rem;
       text-align: center;
       color: #004aad;
       margin-bottom: 2rem;
@@ -1188,4 +911,219 @@ html {
   width: 0%;
   z-index: 9999;
   transition: width 0.25s ease-out;
+}
+
+
+
+@media (max-width: 768px) {
+  .navbar {
+     flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 900;
+    background: linear-gradient(135deg,#001f4d  0%, #0b4b9f 30%, #001f4d 100%);
+  }
+
+    
+  .navbar .logo {
+    order: 1;
+  }
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    order: 3;
+    margin-left: auto;
+    z-index: 1200;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 100%;
+    
+    background-color: #0158b0;
+    gap: 0.5rem;
+    padding-top: 30px;
+    padding-left: 60px;
+    padding-right: 60px;
+    z-index: 1200;
+    transform: translateX(100%);
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+    box-shadow: -4px 0 16px rgba(0,0,0,0.15);
+    overflow-y: auto;
+    display: flex;
+  }
+
+  .nav-links.show {
+    transform: translateX(0);
+  }
+
+  .nav-links li {
+    text-align: center;
+    padding: 12px 0;
+    font-weight: 500;
+    font-size: 1.05rem;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .nav-links li a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #003366;
+    border-radius: 8px;
+  }
+
+  /* Dropdown parent and dropdown for mobile */
+  .navbar .dropdown-parent {
+    position: relative;
+    width: 100%;
+  }
+
+  .navbar .dropdown {
+    display: none !important;
+    position: static;
+    background-color: #003366;
+    width: 100%;
+    margin-top: 20px;
+    box-shadow: none;
+    padding-left: 0;
+    z-index: 1201;
+    border-radius: 10px 10px 10px 10px;
+    flex-direction: column;
+  }
+
+  .navbar .dropdown-parent.active .dropdown {
+    display: flex !important;
+    flex-direction: column;
+  }
+
+  .navbar .dropdown-parent:hover .dropdown {
+    display: flex !important;
+  }
+
+  .navbar .dropdown li {
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  .navbar .dropdown li a {
+    color: white;
+    padding: 6px 16px;
+    background: none;
+    border-radius: 0;
+    z-index:1201;
+  }
+
+  .navbar .dropdown li a:hover {
+    background-color: white;
+    color: #002244;
+  }
+
+
+  .login-signup-btn {
+    position: sticky;
+    top: 10px;      /* Adjust to match your navbar's top padding */
+    right: 5px;    /* Adjust so buttons appear left of the hamburger */
+    z-index: 1100;  /* Above navbar */
+    left: 140px;
+    margin-left: 60px;
+    margin-right: 5px;
+    order:2;
+    border-radius: 6px;
+
+  }
+  
+  
+
+  .navbar .nav-links a {
+    width: 100%;
+    padding: 10px;
+    background-color: #0b3661;
+    border-radius: 10px;
+    
+  }
+
+  /* Hero Section */
+  .hero {
+    padding: 60px 20px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .hero-buttons .btn {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  /* Sections: Projects, Achievements, Team */
+  .project-grid,
+  .achievement-list,
+  .team-grid,
+  .sponsor-logos {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-card,
+  .achievement-card,
+  .team-member {
+    width: 90%;
+  }
+
+  /* Sponsors Section */
+  .sponsor-logos img {
+    width: 150px;
+  }
+
+  /* Footer */
+  .social-icons a {
+    font-size: 1.2rem;
+  }
+
+  /* Dark Toggle Button (bottom-right stays intact) */
+
+  /* Dark Mode Styles */
+.dark-mode {
+  background-color: #1c1c1c;
+  color: #f5f5f5;
+}
+
+.dark-toggle {
+  position: fixed;
+  bottom: 15px;
+  left: 15px;
+  padding: 10px 12px;
+  background-color: #004aad;
+  color: white;
+  border: none;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
 }
