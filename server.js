@@ -2,13 +2,26 @@ const express = require("express");
 const axios = require("axios");
 const cors = require("cors");
 require("dotenv").config();
-
 const app = express();
 
 // CORS: Allow your GitHub Pages domain
 app.use(cors({
-  origin: 'https://ayushv-nitj.github.io'
+  origin: function (origin, callback) {
+    const allowedOrigins = [
+      'http://127.0.0.1:5500',
+      'http://localhost:5500',
+      'https://ayushv-nitj.github.io'
+    ];
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
 }));
+
+
+
 
 app.use(express.json());
 
@@ -17,15 +30,15 @@ app.post("/chat", async (req, res) => {
 
   try {
     const response = await axios.post(
-      "https://openrouter.ai/api/v1/chat/completions",
+      "https://api.groq.com/openai/v1/chat/completions",
       {
-        model: "openai/gpt-3.5-turbo",
+        model: "google/gemini-1.5-flash", // Gemini Flash via Groq
         messages: [{ role: "user", content: userMessage }],
       },
       {
         headers: {
-          Authorization: `Bearer ${process.env.OPENROUTER_API_KEY}`,
-          "HTTP-Referer": "https://ayushv-nitj.github.io/team-phoenix-website/",
+          Authorization: `Bearer ${process.env.GROQ_API_KEY}`, // <-- you'll set this in .env
+           "HTTP-Referer": "https://ayushv-nitj.github.io/team-phoenix-website/",
           "X-Title": "Team Phoenix Chatbot"
         },
       }
@@ -40,7 +53,7 @@ app.post("/chat", async (req, res) => {
     } else {
       console.error("Request Error:", error.message);
     }
-    res.status(500).json({ error: "Error from ChatGPT server" });
+    res.status(500).json({ error: "Error from Gemini API" });
   }
 });
 
