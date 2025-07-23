@@ -601,34 +601,75 @@ body.dark-mode {
 }
 
 body.dark-mode .navbar {
-  background-color: #2b2b2b;
+  background: linear-gradient(135deg, #10131a 0%, #181c22 100%);
+  color: #e0e0e0;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.7);
 }
-
+body.dark-mode .navbar .logo {
+  color: #aad6ff;
+}
 body.dark-mode .navbar .nav-links a {
   color: #e0e0e0;
+  background: transparent;
 }
-
 body.dark-mode .navbar .nav-links a:hover {
-  background-color: #e0e0e0;
-  color: #2b2b2b;
+  background-color: #23272e;
+  color: #aad6ff;
 }
-
 body.dark-mode .hero {
-  background-color: #2b2b2b;
+  background: linear-gradient(135deg, #10131a 0%, #181c22 100%);
   color: #e0e0e0;
+  box-shadow: 0 2px 24px rgba(0,0,0,0.7);
+}
+body.dark-mode .hero-text h1,
+body.dark-mode .hero-text h2 {
+  color: #aad6ff;
+}
+body.dark-mode .achievements {
+  background-color: #181c22;
+}
+body.dark-mode .achievement-card {
+  background-color: #23272e;
+  color: #242a4b;
+  border: 1.5px solid #233e5c;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.7);
+}
+body.dark-mode .achievement-card h3 {
+  color: #aad6ff;
+}
+body.dark-mode .achievement-card:hover {
+  border-color: #aad6ff;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.9);
 }
 
-body.dark-mode .achievements,
 body.dark-mode .team {
-  background-color: #3c3b3b;
+  background-color: #181c22;
 }
-
-body.dark-mode .achievement-card,
 body.dark-mode .team-member {
-  background-color: #333333;
+  background-color: #23272e;
   color: #f0f0f0;
+  border: 1.5px solid #233e5c;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.7);
 }
-
+body.dark-mode .team-member h4 {
+  color: #aad6ff;
+}
+body.dark-mode .team-member:hover {
+  border-color: #aad6ff;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.9);
+}
+body.dark-mode .sponsors {
+  background-color: #181c22;
+}
+body.dark-mode .sponsors h2 {
+  color: #aad6ff;
+}
+body.dark-mode .sponsors p {
+  color: #b0b0b0;
+}
+body.dark-mode .sponsor-logos img {
+  filter: grayscale(0%) brightness(0.8) contrast(1.2);
+}
 body.dark-mode .footer {
   background-color: #000000;
   color: #ccc;
@@ -1126,4 +1167,314 @@ html {
   z-index: 1000;
   transition: all 0.3s ease;
 }
+}
+
+/* --- Enhanced Dark Mode Styles --- */
+body.dark-mode .flight-sim {
+  background: linear-gradient(to top, #23272e, #181c22);
+  color: #e0e0e0;
+}
+body.dark-mode .sky {
+  background: none;
+  background-color: #181c22;
+}
+body.dark-mode .plane {
+  filter: brightness(0.8) drop-shadow(0 2px 8px #000);
+}
+body.dark-mode .projects {
+  background-color: #23272e;
+}
+body.dark-mode .projects h2 {
+  color: #aad6ff;
+}
+body.dark-mode .project-card {
+  background-color: #23272e;
+  color: #f0f0f0;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+}
+body.dark-mode .project-card .modal-hover {
+  background: #0d223a;
+  color: #e0e0e0;
+}
+body.dark-mode .achievement-heading {
+  color: #aad6ff;
+}
+body.dark-mode .achievements {
+  background-color: #23272e;
+}
+body.dark-mode .achievement-card {
+  background-color: #181c22;
+  color: #1c212c;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+}
+body.dark-mode .achievement-card p {
+  color: #042e56;
+}
+body.dark-mode .achievement-card h3 {
+  color: #034a8d;
+}
+body.dark-mode .hover-popup {
+  background-color: #23272e;
+  color: #e0e0e0;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.6);
+}
+body.dark-mode .hover-popup h4 {
+  color: #aad6ff;
+}
+body.dark-mode .team-heading {
+  color: #aad6ff;
+}
+body.dark-mode .team {
+  background-color: #181c22;
+}
+body.dark-mode .team-member {
+  background-color: #23272e;
+  color: #f0f0f0;
+}
+body.dark-mode .team-member h4 {
+  color: #aad6ff;
+}
+body.dark-mode .sponsors {
+  background-color: #181c22;
+}
+body.dark-mode .sponsors h2 {
+  color: #aad6ff;
+}
+body.dark-mode .sponsors p {
+  color: #b0b0b0;
+}
+body.dark-mode .sponsor-logos img {
+  filter: grayscale(0%) brightness(0.8) contrast(1.2);
+}
+body.dark-mode .chatbot {
+  background: #181c22;
+  color: #e0e0e0;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.7);
+}
+body.dark-mode .chat-header {
+  background: #0d223a;
+  color: #aad6ff;
+}
+body.dark-mode .chat-body {
+  background: #23272e;
+  color: #e0e0e0;
+}
+body.dark-mode .chat-input {
+  border-top: 1px solid #333;
+}
+body.dark-mode .chat-input input {
+  background: #23272e;
+  color: #e0e0e0;
+}
+body.dark-mode .chat-input button {
+  background: #0d223a;
+  color: #aad6ff;
+}
+body.dark-mode .chat-toggle {
+  background: #0d223a;
+  color: #aad6ff;
+}
+body.dark-mode .bot-message {
+  background: #23272e;
+  color: #aad6ff;
+}
+body.dark-mode .user-message {
+  background: #004aad;
+  color: #fff;
+}
+body.dark-mode .typing-dots .dot {
+  background-color: #aad6ff;
+}
+body.dark-mode #scrollProgress {
+  background: #aad6ff;
+}
+
+/* --- Universal Dark Mode Improvements for All Pages --- */
+body.dark-mode .achievements-container {
+  background: #181c22;
+  color: #e0e0e0;
+}
+body.dark-mode .achievements-container .achievement-card a{
+  color: #10112f;
+}
+body.dark-mode .achievements-container h1 {
+  color: #aad6ff;
+  border-right: 2px solid #aad6ff;
+}
+body.dark-mode .achievement-grid {
+  background: none;
+}
+body.dark-mode .back-home {
+  background: #0d223a;
+  color: #aad6ff;
+  border: 2px solid #aad6ff;
+}
+body.dark-mode .back-home:hover {
+  background: #aad6ff;
+  color: #0d223a;
+  border: 2px solid #0d223a;
+}
+body.dark-mode .video-container {
+  background: #181c22;
+  color: #e0e0e0;
+}
+body.dark-mode .video-container h1 {
+  color: #aad6ff;
+}
+body.dark-mode .contact-container {
+  background: #181c22;
+  color: #e0e0e0;
+}
+body.dark-mode .contact-container h1,
+body.dark-mode .contact-container h2 {
+  color: #aad6ff;
+}
+body.dark-mode .login-signup-btn {
+  background: #0d223a;
+  color: #aad6ff;
+  border: 1.5px solid #aad6ff;
+}
+body.dark-mode .login-signup-btn:hover {
+  background: #aad6ff;
+  color: #0d223a;
+  border: 1.5px solid #0d223a;
+}
+body.dark-mode .input-group input,
+body.dark-mode input[type="email"],
+body.dark-mode input[type="password"],
+body.dark-mode input[type="text"] {
+  background: #23272e;
+  color: #e0e0e0;
+  border: 1.5px solid #233e5c;
+}
+body.dark-mode .login-box {
+  background: #181c22;
+  color: #e0e0e0;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+}
+body.dark-mode .login-box h2 {
+  color: #aad6ff;
+}
+body.dark-mode .sponsor-container {
+  background: #181c22;
+  color: #e0e0e0;
+}
+body.dark-mode .sponsor-container h1 {
+  color: #aad6ff;
+}
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4 {
+  color: #aad6ff;
+}
+body.dark-mode a {
+  color: #aad6ff;
+}
+body.dark-mode a:hover {
+  color: #fff;
+}
+
+/* --- Dark Mode for Recent & Upcoming Events Pages --- */
+body.dark-mode .recent-events-container,
+body.dark-mode .events-container {
+  background: #181c22;
+  color: #e0e0e0;
+}
+body.dark-mode .event-meta {
+  color: #aad6ff;
+}
+body.dark-mode .recent-events-container h1,
+body.dark-mode .events-container h1 {
+  color: #aad6ff;
+}
+body.dark-mode .event-card {
+  background: #23272e;
+  color: #e0e0e0;
+  border: 1.5px solid #233e5c;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.7);
+}
+body.dark-mode .event-card:hover {
+  border-color: #aad6ff;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.9);
+}
+body.dark-mode .event-img {
+  filter: brightness(0.85) contrast(1.1);
+}
+body.dark-mode .carousel,
+body.dark-mode .carousel-wrapper {
+  background: #181c22;
+}
+
+/*sponsor*/
+body.dark-mode .sponsor-container .cool {
+  color: #92c0ec;
+}
+body.dark-mode .sponsor-container p {
+  color: #122638;
+}
+body.dark-mode .sponsor-container h4 {
+  color: #082036;
+}
+
+body.dark-mode .sponsor-tiers h3 {
+  color: #082036;
+}
+body.dark-mode .sponsor-tiers ul {
+  color: #082036;
+}
+
+body.dark-mode .sponsor-testimonials {
+  background: #181c22;
+  color: #171d50;
+}
+body.dark-mode .sponsor-testimonials h2 {
+  color: #aad6ff;
+}
+body.dark-mode .want-to-learn-more p{
+  color: #b5b5b7;
+}
+
+body.dark-mode .about-container {
+  color: #122638;
+}
+body.dark-mode .about-container p {
+  color: #023b6d;
+}
+body.dark-mode .about-container h2 {
+  color: #043a6d;
+}
+body.dark-mode .about-container h1 {
+  color: #0d026f;
+}
+
+@media (max-width: 768px) {
+  body.dark-mode .nav-links {
+    background-color: #181c22;
+    box-shadow: -4px 0 24px rgba(0,0,0,0.8);
+  }
+  body.dark-mode .nav-links li a {
+    background-color: #383a3d;
+    color: #aad6ff;
+    border-radius: 10px;
+    transition: background 0.3s, color 0.3s;
+  }
+  body.dark-mode .nav-links li a:hover {
+    background-color: #233e5c;
+    color: #fff;
+  }
+  body.dark-mode .navbar .dropdown {
+    background-color: #181c22 !important;
+  }
+  body.dark-mode .navbar .dropdown li a {
+    color: #aad6ff;
+    background: none;
+  }
+  body.dark-mode .navbar .dropdown li a:hover {
+    background-color: #233e5c;
+    color: #fff;
+  }
+}
+body.dark-mode .gallery-container h1 {
+  color: #272829;
 }
