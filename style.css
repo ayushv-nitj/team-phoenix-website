@@ -1478,3 +1478,12 @@ body.dark-mode .about-container h1 {
 body.dark-mode .gallery-container h1 {
   color: #272829;
 }
+
+.navbar a .logo,
+.navbar .logo {
+  text-decoration: none !important;
+  color: white;
+}
+.navbar a {
+  text-decoration: none !important;
+}
