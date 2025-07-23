@@ -97,7 +97,7 @@
 
 <!-- Achievements Section -->
 <section class="achievements">
-  <h2>Achievements</h2>
+  <h2 class="achievement-heading">Achievements</h2>
   <div class="achievement-list">
     <!-- First 3 cards always visible -->
     <div class="achievement-card">
@@ -164,7 +164,7 @@
 <!-- Our Team Section -->
 <section class="team" data-aos="fade-up">
 
-  <h2>Our Team</h2>
+  <h2 class="team-heading">Our Team</h2>
   <div class="team-grid">
  <div class="team-member">
       <img src="images/team.jpg" alt="Team Phoenix">
@@ -278,40 +278,6 @@
   🌙
 </button>
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const toggle = document.getElementById("darkToggle");
-  const body = document.body;
-
-  if (toggle && body) {
-    toggle.addEventListener("click", () => {
-      body.classList.toggle("dark-mode");
-      toggle.textContent = body.classList.contains("dark-mode") ? "☀️" : "🌙";
-    });
-  }
-
-  // Hamburger toggle (optional)
-  const hamburger = document.getElementById('hamburger');
-  const navLinks = document.getElementById('navLinks');
-  if (hamburger && navLinks) {
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('show');
-    });
-  }
-});
-
-</script>
-
-<script>
-  const toggle = document.getElementById("darkToggle");
-  const body = document.body;
-
-  toggle.addEventListener("click", () => {
-    body.classList.toggle("dark-mode");
-    toggle.textContent = body.classList.contains("dark-mode") ? "☀️" : "🌙";
-  });
-</script>
-
 <!-- AOS JS -->
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script>
@@ -335,18 +301,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-  <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const hamburger = document.getElementById('hamburger');
-  const navLinks = document.getElementById('navLinks');
-
-  hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('show');
-  });
-});
-
-
-  </script>
 
 
 <!-- Mini Chatbot -->

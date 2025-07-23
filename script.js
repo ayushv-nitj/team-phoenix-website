@@ -13,10 +13,24 @@ document.addEventListener("DOMContentLoaded", () => {
   // Dark mode toggle
   const toggle = document.getElementById("darkToggle");
   const body = document.body;
+  // --- Dark mode persistence and emoji update ---
+  function setDarkMode(isDark) {
+    if (isDark) {
+      body.classList.add("dark-mode");
+      toggle.textContent = "☀️";
+      localStorage.setItem("phoenix-dark-mode", "true");
+    } else {
+      body.classList.remove("dark-mode");
+      toggle.textContent = "🌙";
+      localStorage.setItem("phoenix-dark-mode", "false");
+    }
+  }
+  // On load: set initial state
   if (toggle && body) {
+    const darkPref = localStorage.getItem("phoenix-dark-mode");
+    setDarkMode(darkPref === "true");
     toggle.addEventListener("click", () => {
-      body.classList.toggle("dark-mode");
-      toggle.textContent = body.classList.contains("dark-mode") ? "☀" : "🌙";
+      setDarkMode(!body.classList.contains("dark-mode"));
     });
   }
 

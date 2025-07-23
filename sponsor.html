@@ -213,7 +213,7 @@
 <body>
   <div class="sponsor-container" data-aos="fade-up">
     <h1>Become a Sponsor</h1>
-    <p>Support Team Phoenix and partner with future aerospace leaders. Help us innovate, fly, and compete across the globe.</p>
+    <p class="cool">Support Team Phoenix and partner with future aerospace leaders. Help us innovate, fly, and compete across the globe.</p>
 
     <section class="sponsor-highlights">
       <div class="highlights">
@@ -260,7 +260,7 @@
       </form>
     </section>
 
-    <div style="text-align:center; margin-top:20px;">
+    <div class = "want-to-learn-more"style="text-align:center; margin-top:20px;">
       <p>Want to learn more? <a href="downloads.html" style="color:#004aad; text-decoration:underline;">Download our brochure</a>.</p>
     </div>
 
@@ -269,7 +269,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
-  <script src="script.js"></script> 
+  <script src="script.js"></script>
   <script>
     AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
     emailjs.init("YOUR_PUBLIC_KEY");
@@ -285,5 +285,7 @@
         });
     });
   </script>
+  <!-- Dark Mode Toggle -->
+  <button id="darkToggle" class="dark-toggle" aria-label="Toggle Dark Mode">🌙</button>
 </body>
 </html>
