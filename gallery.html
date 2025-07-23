@@ -52,6 +52,9 @@
   </ul>
 </nav>
   <style>
+    body .dark-mode .galleryc{
+      color: rgb(41, 40, 40);
+    }
     body { background: linear-gradient(to bottom, #e8f0ff, #ffffff); font-family: 'Segoe UI', sans-serif; }
     .gallery-container {
       max-width: 1200px; margin: 60px auto; padding: 20px;
@@ -60,6 +63,7 @@
     .gallery-container h1 {
       text-align: center; font-size: 2.8rem; color: #004aad; margin-bottom: 1.5rem;
     }
+    
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -87,15 +91,29 @@
       bottom: 0;
       width: 100%;
       padding: 12px;
-      background: rgba(0,0,0,0.5);
+      background: linear-gradient(135deg,#001f4d  0%, #0b4b9f 30%, #001f4d 100%);
       color: white;
       font-size: 1rem;
       text-align: center;
-      opacity: 0;
-      transition: opacity 0.3s ease;
+      opacity: 1;
+      transition: opacity 0.5s ease;
     }
     .gallery-item:hover .gallery-caption {
       opacity: 1;
+      background: white;
+      color: rgb(2, 9, 103);
+      transition: opacity 0.5s ease;
+      font-weight: bolder;
+
+    }
+    .dark-mode .gallery-caption {
+      background: rgb(12, 12, 12);
+      color: white;
+    }
+    .dark-mode .gallery-item:hover .gallery-caption {
+      background: white;
+      color: rgb(2, 9, 103);
+     
     }
     .back-home {
       display: inline-block;
@@ -113,9 +131,215 @@
       border: 2px solid #004aad;
       transform: scale(1.05);
     }
+
+    .event-modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.8);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+.event-modal-content {
+  background: #fff;
+  font-size: 1.2rem;
+  border-radius: 16px;
+  max-width: 95vw;
+  max-height: 95vh;
+  width: 95%;
+  height: 95vh;
+  padding: 32px 24px;
+  position: relative;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  animation: fadeIn 0.3s;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  /* Blue gradient border */
+  border: 10px solid transparent;
+  background:
+    linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(135deg, #025cb0, #0c96ec 60%, #01315f) border-box;
+}
+body.dark-mode .event-modal-content {
+  background: #23272e;
+  color: #e0e0e0;
+  border: 10px solid grey;
+  background:
+    linear-gradient(#23272e, #23272e) padding-box,
+    linear-gradient(135deg, #1e1f20, #464949 60%, #3e3f3f) border-box;
+}
+#eventModalTitle {
+  font-size: 2rem;
+  font-weight: bolder;
+  text-align: center;
+  margin-top: -50px;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, #007cf0 0%, #00dfd8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-shadow: 0 4px 24px rgba(4, 71, 133, 0.12), 0 1px 0 #fff;
+  position: relative;
+}
+#eventModalTitle::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 5px;
+  margin: 18px auto 0 auto;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #007cf0 0%, #00dfd8 100%);
+}
+body.dark-mode #eventModalTitle {
+  text-shadow: 0 4px 24px rgba(0,223,216,0.18), 0 1px 0 #23272e;
+}
+.event-modal-close {
+  position: sticky;
+  top: 0;
+  right: 24px;
+  font-size: 2rem;
+  color: #004aad;
+  cursor: pointer;
+  font-weight: bold;
+  background: #fff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  z-index: 10;
+}
+.event-modal-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+  margin-bottom: 24px;
+  flex: 1;
+}
+.event-modal-images img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.event-modal-images img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+.event-modal-details p {
+  margin: 8px 0;
+  line-height: 1.6;
+}
+.event-modal-details strong {
+  color: #004aad;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(40px);}
+  to { opacity: 1; transform: none;}
+}
+
+/* Lightbox for individual images */
+.image-lightbox {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.95);
+  z-index: 3000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.image-lightbox img {
+  max-width: 85vw;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+}
+.image-lightbox-close {
+  position: absolute;
+  top: 20px; right: 30px;
+  font-size: 2.5rem;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  background: rgba(0,0,0,0.5);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+.image-lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.6);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+  z-index: 10;
+}
+.image-lightbox-nav:hover {
+  background: rgba(0,0,0,0.8);
+}
+.image-lightbox-nav.prev {
+  left: 30px;
+}
+.image-lightbox-nav.next {
+  right: 30px;
+}
+.image-lightbox-counter {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  background: rgba(0,0,0,0.6);
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 1rem;
+  z-index: 10;
+}
+
+/* Dark mode for modal */
+body.dark-mode .event-modal-content {
+  background: #23272e;
+  color: #e0e0e0;
+}
+body.dark-mode .event-modal-close {
+  background: #23272e;
+  color: #aad6ff;
+}
+body.dark-mode .event-modal-details strong {
+  color: #aad6ff;
+}
   </style>
 </head>
 <body>
+  <div class="galleryc">
   <div class="gallery-container" data-aos="fade-up">
     <h1>Photo Gallery</h1>
 
@@ -166,5 +390,247 @@
   </script>
   <!-- Dark Mode Toggle -->
   <button id="darkToggle" class="dark-toggle" aria-label="Toggle Dark Mode">🌙</button>
+
+<div id="eventModal" class="event-modal" style="display:none;">
+  <div class="event-modal-content">
+    <span class="event-modal-close" id="eventModalClose">&times;</span>
+    <h2 id="eventModalTitle"></h2>
+    <div id="eventModalImages" class="event-modal-images"></div>
+    <div class="event-modal-details">
+      <p><strong>Date:</strong> <span id="eventModalDate"></span></p>
+      <p><strong>Time:</strong> <span id="eventModalTime"></span></p>
+      <p><strong>Venue:</strong> <span id="eventModalVenue"></span></p>
+      <p><strong>Organizer:</strong> <span id="eventModalOrganizer"></span></p>
+      <p id="eventModalDescription"></p>
+    </div>
+  </div>
+</div>
+
+<!-- Lightbox for individual images -->
+<div id="imageLightbox" class="image-lightbox">
+  <span class="image-lightbox-close" id="imageLightboxClose">&times;</span>
+  <img id="lightboxImage" src="" alt="">
+  <a href="#" class="image-lightbox-nav prev" id="imageLightboxPrev">&lt;</a>
+  <a href="#" class="image-lightbox-nav next" id="imageLightboxNext">&gt;</a>
+  <span class="image-lightbox-counter" id="imageLightboxCounter"></span>
+</div>
+</div>
+
+<script>
+  const eventData = [
+    {
+      title: "Fixed‑Wing Drone Prototype Showcase",
+      images: [
+        "images/g1.png", "images/g2.png", "images/g3.png", "images/g4.png", "images/g5.png",
+        "images/g6.png", "images/g7.png", "images/g8.png", "images/g1.png", "images/g2.png"
+      ],
+      date: "March 15, 2024",
+      time: "10:00 AM - 4:00 PM",
+      venue: "NIT Jamshedpur, Main Ground",
+      organizer: "Team Phoenix",
+      description: "Our flagship fixed-wing drone prototype was showcased at the annual tech expo, drawing attention from students, faculty, and industry professionals. The event featured live flight demonstrations, technical presentations, and interactive Q&A sessions. The drone demonstrated exceptional stability and efficiency during its 45-minute flight demonstration, achieving a range of 15 kilometers on a single battery charge. Visitors were particularly impressed by the innovative wing design and autonomous navigation capabilities. The event also included networking opportunities with aerospace companies and potential sponsors."
+    },
+    {
+      title: "Quadcopter Testing & Development Session",
+      images: [
+        "images/g2.png", "images/g3.png", "images/g4.png", "images/g5.png", "images/g6.png",
+        "images/g7.png", "images/g8.png", "images/g1.png", "images/g2.png", "images/g3.png"
+      ],
+      date: "February 10, 2024",
+      time: "2:00 PM - 6:00 PM",
+      venue: "Aero Lab, Department of Aerospace Engineering",
+      organizer: "Team Phoenix",
+      description: "An intensive testing session for our latest quadcopter design, featuring comprehensive stability and agility trials. The session included stress testing under various weather conditions, payload capacity verification, and emergency landing procedures. Students and faculty actively participated in the hands-on event, learning about flight dynamics and control systems. The quadcopter successfully completed all planned maneuvers including vertical takeoff, hover stability tests, and precision landing. The event also served as a training session for new team members, introducing them to our development protocols and safety procedures."
+    },
+    {
+      title: "Team Phoenix Annual Expo Presentation",
+      images: [
+        "images/g3.png", "images/g4.png", "images/g5.png", "images/g6.png", "images/g7.png",
+        "images/g8.png", "images/g1.png", "images/g2.png", "images/g3.png", "images/g4.png"
+      ],
+      date: "January 20, 2024",
+      time: "11:00 AM - 3:00 PM",
+      venue: "NIT Jamshedpur, Main Auditorium",
+      organizer: "Team Phoenix",    
+      description: "Our team's comprehensive presentation at the annual tech expo showcased all our drone prototypes and achievements from the past year. The presentation included detailed technical specifications, development challenges overcome, and future project roadmaps. We demonstrated our complete fleet including fixed-wing drones, quadcopters, and experimental VTOL designs. The event attracted over 200 attendees including students, faculty, industry representatives, and media. Special highlights included our award-winning autonomous navigation system and innovative battery management solutions. The presentation concluded with a live demonstration of our latest prototype performing complex aerial maneuvers."
+    },
+    {
+      title: "Aerospace Workshop & Training Program",
+      images: [
+        "images/g4.png", "images/g5.png", "images/g6.png", "images/g7.png", "images/g8.png",
+        "images/g1.png", "images/g2.png", "images/g3.png", "images/g4.png", "images/g5.png"
+      ],
+      date: "December 5, 2023",
+      time: "9:00 AM - 5:00 PM",
+      venue: "NIT Jamshedpur, Workshop Complex",
+      organizer: "Team Phoenix",
+      description: "A comprehensive workshop designed to introduce students to the fundamentals of aerospace engineering and drone technology. The program covered aerodynamics, propulsion systems, materials science, and flight control theory. Participants built their own small-scale drone models and learned about safety protocols and regulations. The workshop included hands-on sessions with our professional equipment and software tools. Industry experts from leading aerospace companies provided guest lectures on emerging technologies and career opportunities. The event concluded with a competition where participants tested their built models in various challenges."
+    },
+    {       
+      title: "International Drone Competition Preparation",
+      images: [
+        "images/g5.png", "images/g6.png", "images/g7.png", "images/g8.png", "images/g1.png",
+        "images/g2.png", "images/g3.png", "images/g4.png", "images/g5.png", "images/g6.png"
+      ],
+      date: "November 18, 2023",
+      time: "8:00 AM - 7:00 PM",
+      venue: "NIT Jamshedpur, Competition Ground",
+      organizer: "Team Phoenix",
+      description: "Intensive preparation session for the upcoming international drone competition. The team conducted rigorous testing of all competition parameters including speed trials, obstacle course navigation, and payload delivery accuracy. We fine-tuned our autonomous systems and optimized flight paths for maximum efficiency. The session included mock competition scenarios with judges and timing systems. Special attention was given to reliability testing under various environmental conditions. The team also practiced emergency procedures and backup system activation. This preparation proved crucial as we went on to secure second place in the international competition."
+    },      
+    {
+      title: "Research & Development Symposium",
+      images: [
+        "images/g6.png", "images/g7.png", "images/g8.png", "images/g1.png", "images/g2.png",
+        "images/g3.png", "images/g4.png", "images/g5.png", "images/g6.png", "images/g7.png"
+      ],
+      date: "October 12, 2023",
+      time: "10:00 AM - 6:00 PM",
+      venue: "NIT Jamshedpur, Conference Hall",
+      organizer: "Team Phoenix",
+      description: "Our annual research symposium showcasing cutting-edge developments in drone technology and aerospace engineering. The event featured presentations on our latest research projects including hybrid propulsion systems, advanced materials for lightweight construction, and AI-powered flight control algorithms. We demonstrated prototypes of our next-generation drones featuring innovative designs and breakthrough technologies. The symposium attracted researchers from across the country and included panel discussions on the future of autonomous aerial vehicles. Special sessions covered regulatory compliance, environmental impact assessment, and commercial applications of drone technology."
+    },          
+    {
+      title: "Community Outreach & Education Program",
+      images: [
+        "images/g7.png", "images/g8.png", "images/g1.png", "images/g2.png", "images/g3.png",
+        "images/g4.png", "images/g5.png", "images/g6.png", "images/g7.png", "images/g8.png"
+      ],
+      date: "September 25, 2023",
+      time: "2:00 PM - 5:00 PM",
+      venue: "Local Schools & Community Centers",
+      organizer: "Team Phoenix",
+      description: "An educational outreach program designed to inspire the next generation of aerospace engineers and drone enthusiasts. We visited multiple schools and community centers, conducting interactive demonstrations and educational workshops. Students learned about the science behind flight, basic aerodynamics, and the engineering design process. The program included hands-on activities where participants could design and test simple flying models. We also discussed career opportunities in aerospace engineering and the growing importance of drone technology in various industries. The program received overwhelming positive feedback and helped establish partnerships with local educational institutions."
+    },                                
+
+    {
+      title: "Technical Innovation & Patent Workshop",
+      images: [
+        "images/g8.png", "images/g1.png", "images/g2.png", "images/g3.png", "images/g4.png",
+        "images/g5.png", "images/g6.png", "images/g7.png", "images/g8.png", "images/g1.png"
+      ],
+      date: "August 30, 2023",
+      time: "9:00 AM - 4:00 PM",
+      venue: "NIT Jamshedpur, Innovation Center",
+      organizer: "Team Phoenix",
+      description: "A specialized workshop focused on intellectual property protection and patent filing for aerospace innovations. The event covered the patent application process, prior art searches, and intellectual property strategy development. We presented our latest innovations including a novel wing design, improved battery management system, and advanced flight control algorithms. Industry experts provided guidance on commercialization strategies and technology transfer opportunities. The workshop also included sessions on research methodology, documentation standards, and collaboration with industry partners. Several of our innovations discussed during this workshop have since been filed for patent protection."
+    }  
+                  
+    
+
+  ];
+  
+  // Global variables for lightbox navigation
+  let currentImages = [];
+  let currentImageIndex = 0;
+  
+  document.querySelectorAll('.gallery-item').forEach((item, idx) => {
+    item.addEventListener('click', () => {
+      const data = eventData[idx];
+      if (!data) return;
+      document.getElementById('eventModalTitle').textContent = data.title;
+      document.getElementById('eventModalImages').innerHTML = data.images.map(src => 
+        `<img src="${src}" alt="" onclick="openLightbox('${src}', ${data.images.indexOf(src)})">`
+      ).join('');
+      document.getElementById('eventModalDate').textContent = data.date;
+      document.getElementById('eventModalTime').textContent = data.time;
+      document.getElementById('eventModalVenue').textContent = data.venue;
+      document.getElementById('eventModalOrganizer').textContent = data.organizer;
+      document.getElementById('eventModalDescription').textContent = data.description;
+      document.getElementById('eventModal').style.display = 'flex';
+      
+      // Store current event's images for lightbox navigation
+      currentImages = data.images;
+    });
+  });
+  
+  // Event modal close
+  document.getElementById('eventModalClose').onclick = function() {
+    document.getElementById('eventModal').style.display = 'none';
+  };
+  
+  // Lightbox functions
+  function openLightbox(imageSrc, imageIndex = 0) {
+    currentImageIndex = imageIndex;
+    updateLightboxImage();
+    document.getElementById('imageLightbox').style.display = 'flex';
+  }
+  
+  function updateLightboxImage() {
+    if (currentImages.length === 0) return;
+    
+    const imageSrc = currentImages[currentImageIndex];
+    document.getElementById('lightboxImage').src = imageSrc;
+    document.getElementById('imageLightboxCounter').textContent = `${currentImageIndex + 1} / ${currentImages.length}`;
+    
+    // Show/hide navigation arrows
+    document.getElementById('imageLightboxPrev').style.display = currentImageIndex > 0 ? 'flex' : 'none';
+    document.getElementById('imageLightboxNext').style.display = currentImageIndex < currentImages.length - 1 ? 'flex' : 'none';
+  }
+  
+  function nextImage() {
+    if (currentImageIndex < currentImages.length - 1) {
+      currentImageIndex++;
+      updateLightboxImage();
+    }
+  }
+  
+  function prevImage() {
+    if (currentImageIndex > 0) {
+      currentImageIndex--;
+      updateLightboxImage();
+    }
+  }
+  
+  // Lightbox navigation
+  document.getElementById('imageLightboxNext').onclick = function(e) {
+    e.preventDefault();
+    nextImage();
+  };
+  
+  document.getElementById('imageLightboxPrev').onclick = function(e) {
+    e.preventDefault();
+    prevImage();
+  };
+  
+  // Lightbox close
+  document.getElementById('imageLightboxClose').onclick = function() {
+    document.getElementById('imageLightbox').style.display = 'none';
+  };
+  
+  // Close modals when clicking outside
+  window.onclick = function(event) {
+    if (event.target === document.getElementById('eventModal')) {
+      document.getElementById('eventModal').style.display = 'none';
+    }
+    if (event.target === document.getElementById('imageLightbox')) {
+      document.getElementById('imageLightbox').style.display = 'none';
+    }
+  };
+  
+  // Keyboard navigation
+  document.addEventListener('keydown', function(event) {
+    if (document.getElementById('imageLightbox').style.display === 'flex') {
+      switch(event.key) {
+        case 'Escape':
+          document.getElementById('imageLightbox').style.display = 'none';
+          break;
+        case 'ArrowRight':
+          nextImage();
+          break;
+        case 'ArrowLeft':
+          prevImage();
+          break;
+      }
+    } else if (document.getElementById('eventModal').style.display === 'flex') {
+      if (event.key === 'Escape') {
+        document.getElementById('eventModal').style.display = 'none';
+      }
+    }
+  });
+  </script>
+
 </body>
 </html>
+
+
