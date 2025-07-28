@@ -46,6 +46,33 @@ body {
   gap: 1.5rem;
 }
 
+/* Default nav link style */
+.navbar .nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  background-color: transparent;
+}
+
+/* Active (clicked) link */
+ .nav-links a.active {
+  background-color: white;
+  color: #002244;
+  box-shadow: 0 10px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover effect (even on active links) */
+.navbar .nav-links a:hover {
+  background-color: #004aad;
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+/*  old code
 .navbar .nav-links a {
   color: white;
   text-decoration: none;
@@ -60,6 +87,7 @@ body {
   color: #002244;
   box-shadow: 0 10px 16px rgba(0, 0, 0, 0.2);
 }
+*/
 
 /* Hamburger icon (hidden by default) */
 .hamburger {
